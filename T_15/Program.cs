@@ -10,7 +10,7 @@ namespace T_15
     {
         static void Main(string[] args)
         {
-            int d = 1;
+            
         }
     }
 }

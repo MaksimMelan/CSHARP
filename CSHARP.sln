@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T_15", "T_15\T_15.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T_16", "T_16\T_16.csproj", "{2164DC61-5086-4642-B588-C8DE5566EC33}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Новая папка1", "Новая папка1", "{B5478B32-04FE-4FD9-8614-41574D2F0D9E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Условные операторы и цыклы", "Условные операторы и цыклы", "{B5478B32-04FE-4FD9-8614-41574D2F0D9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
