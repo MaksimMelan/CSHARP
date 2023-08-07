@@ -12,17 +12,17 @@ namespace CSHomeworkCycles
         {
             int startInterval = 1;
             int endInterval = 27;
-            int maxNumberToCheck = 1000;
-            int minNumberToCheck = 100;
+            int maxRange = 1000;
+            int minRange = 100;
             int numberN;
-            Random random = new Random();
             int counter = 0;
 
-            numberN = random.Next(startInterval, endInterval);
+            Random random = new Random();
+            numberN = random.Next(startInterval, endInterval + 1);
 
-            for (int i = 0; i < maxNumberToCheck; i += numberN)
+            for (int i = 0; i < maxRange; i += numberN)
             {
-                if (i >= minNumberToCheck)
+                if (i >= minRange)
                 {
                     Console.WriteLine($"картное число {i}\n");
                     counter++;

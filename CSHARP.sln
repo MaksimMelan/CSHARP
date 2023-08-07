@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T_16", "T_16\T_16.csproj", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Условные операторы и цыклы", "Условные операторы и цыклы", "{B5478B32-04FE-4FD9-8614-41574D2F0D9E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T_17", "T_17\T_17.csproj", "{8B263472-D5C7-44B1-880B-B610EC82DAD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{2164DC61-5086-4642-B588-C8DE5566EC33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2164DC61-5086-4642-B588-C8DE5566EC33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2164DC61-5086-4642-B588-C8DE5566EC33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B263472-D5C7-44B1-880B-B610EC82DAD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B263472-D5C7-44B1-880B-B610EC82DAD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B263472-D5C7-44B1-880B-B610EC82DAD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B263472-D5C7-44B1-880B-B610EC82DAD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
