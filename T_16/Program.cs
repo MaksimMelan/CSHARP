@@ -28,6 +28,7 @@ namespace CSHomeworkCycles
                     counter++;
                 }
             }
+
             Console.WriteLine($"Число N - {numberN}");
             Console.WriteLine($"Трехзначных чисел кратных N - {counter}");
         }
