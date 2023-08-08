@@ -13,8 +13,9 @@ namespace T_17
             int givenNumber;
             int power = 2;
             int powerMin = power;
+
             Random rnd = new Random();
-            givenNumber = rnd.Next(10, 100);
+            givenNumber = rnd.Next(1, 100);
 
             while (powerMin < givenNumber)
             {
