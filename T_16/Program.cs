@@ -10,7 +10,7 @@ namespace CSHomeworkCycles
     {
         static void Main(string[] args)
         {
-            int startInterval = 1;//ххх
+            int startInterval = 1;
             int endInterval = 27;
             int maxRange = 1000;
             int minRange = 100;
