@@ -10,7 +10,19 @@ namespace T_17
     {
         static void Main(string[] args)
         {
-            int i = 0;
+            int givenNumber;
+            int power = 2;
+            int powerMin = power;
+            Random rnd = new Random();
+            givenNumber = rnd.Next(10, 100);
+
+            while (powerMin < givenNumber)
+            {
+                powerMin *= power;
+                Console.WriteLine(powerMin);
+            }
+
+            Console.WriteLine($"Минимальную степень {power} , превосходящую заданное число {givenNumber}, равна - {powerMin}");
         }
     }
 }
