@@ -16,10 +16,10 @@ namespace T_17
             int power = 2;
             int powerMin = power;
 
-            Random rnd = new Random();
-            givenNumber = rnd.Next(startInterval, endInterval + 1);
+            Random random = new Random();
+            givenNumber = random.Next(startInterval, endInterval + 1);
 
-            while (powerMin < givenNumber)
+            while (powerMin <= givenNumber)
             {
                 powerMin *= power;
                 Console.WriteLine(powerMin);
