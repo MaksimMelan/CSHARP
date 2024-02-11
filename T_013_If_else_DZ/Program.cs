@@ -10,13 +10,10 @@ namespace T_013_If_else_DZ
     {
         static void Main(string[] args)
         {
-            double number;
-            
+            double number;            
 
             Console.WriteLine("Введите число:");
             number = Convert.ToDouble(Console.ReadLine());
-
-            
 
             if ( 0 == number % 2 )
             {
