@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C6092C3A-6ACD-4F45-9629-C0643DC474BF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>T_7._3</RootNamespace>
-    <AssemblyName>T_7.3</AssemblyName>
+    <RootNamespace>T_007_3</RootNamespace>
+    <AssemblyName>T_007_3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
