@@ -10,7 +10,18 @@ namespace T_021_CONTINUE
     {
         static void Main(string[] args)
         {
-
+            /* CONTINUE повзоляет прервать какую-то итерацию
+             * цикла, но не выходить из цикла.
+             */
+            for (int i = 0; i < 5; i++)
+            {
+                if (i == 2)
+                {
+                    continue;
+                }
+                Console.WriteLine(i);
+            }
+            Console.ReadKey();
         }
     }
 }

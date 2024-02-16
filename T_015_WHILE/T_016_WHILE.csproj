@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B645ABA4-3AD1-46E5-B3A2-BAAC229C9506}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>T_015_WHILE</RootNamespace>
-    <AssemblyName>T_015_WHILE</AssemblyName>
+    <RootNamespace>T_016_WHILE</RootNamespace>
+    <AssemblyName>T_016_WHILE</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

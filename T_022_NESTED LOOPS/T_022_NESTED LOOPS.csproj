@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C711212-2154-4092-A672-884797A94B69}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>T_020_BREAK</RootNamespace>
-    <AssemblyName>T_020_BREAK</AssemblyName>
+    <ProjectGuid>{F391BD54-CD23-4520-BC88-EE23AB775361}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>T_022_NESTED_LOOPS</RootNamespace>
+    <AssemblyName>T_022_NESTED LOOPS</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,9 +31,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
