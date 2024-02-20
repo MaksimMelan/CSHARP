@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные с этой сборкой.
-[assembly: AssemblyTitle("T_008")]
+[assembly: AssemblyTitle("S_0019_parenthesis expressions")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("T_008")]
+[assembly: AssemblyProduct("S_0019_parenthesis expressions")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("0f648e0a-711b-4ba7-a38c-604977517b1c")]
+[assembly: Guid("a79cd720-8bf2-40b5-beac-99b77cfbdf05")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные с этой сборкой.
-[assembly: AssemblyTitle("T_008")]
+[assembly: AssemblyTitle("T_023_Trainer_Operator")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("T_008")]
+[assembly: AssemblyProduct("T_023_Trainer_Operator")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("0f648e0a-711b-4ba7-a38c-604977517b1c")]
+[assembly: Guid("fe8eef8e-ee1f-40e2-9d77-f8bd0c991da6")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
