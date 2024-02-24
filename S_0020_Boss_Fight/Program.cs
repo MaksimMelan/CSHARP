@@ -20,22 +20,22 @@ namespace S_0020_Boss_Fight
 
             int healthPointsHero = 1000;
             int healthPointsBoss = 1000;
+            int defaultHealthPointsHero = 1000;
 
             int energyHero = 1000;
             int energyBoss = 1000;
-            int energySimplyAttack = 10;
+            int defaultEnergyHero = 1000;
             int energyConsumptionByFireball = 100;
-            int energyConsumptionByExplosion = 100;
-            int energyConsumptionByHealing = 50;
-            int energySimplySmoke = 10;
+
 
             int damageSimplyAttack = 50;
             int damageFireballAttack = 100;
             int damageExplosionAttack = 200;
             int healingAttack = 100;
-            int smokeAttack = 300;
+            int countHealingAttack = 5;
+            int damageAttackBoss = 10;
 
-            int inputСommands;
+            int inputCommand;
             bool usedFireball = false;
             bool smokeAttackHero = false;
             bool smokeAttackBoss = false;
@@ -45,94 +45,67 @@ namespace S_0020_Boss_Fight
             string messageHealthHero = "здоровье: " + healthPointsHero + "; энергия: " + energyHero;
             string messagehealthBoss = "здоровье: " + healthPointsBoss + "; энергия: " + energyBoss;
             string playerMenu = "Какие Ваши действия? \nварианты: ";
-            string messageSimply = "1 - обычная атака: урон  " + damageSimplyAttack + ", затраты энергии " + energySimplyAttack + ";";
+            string messageSimply = "1 - обычная атака: урон  " + damageSimplyAttack + ";";
             string messageFireball = "2 - фаербол: урон " + damageFireballAttack + ", затраты энергии " + energyConsumptionByFireball + ";";
-            string messageExplosion = "3 - взрыв: урон " + damageExplosionAttack + ", затраты энергии;" + energyConsumptionByExplosion + ";";
-            string messageHealing = "4 - лечение: востонавливает здоровья " + healingAttack + ", затраты энергии " + energyConsumptionByHealing + ";";
-            string messageSmoke = "5 - дым: затраты энергии " + energySimplySmoke + " востановление энергии: " + smokeAttack + ";";
+            string messageExplosion = "3 - взрыв: урон " + damageExplosionAttack + ";";
+            string messageHealing = "4 - лечение: востонавливает здоровья " + healingAttack + ", осталось лечений " + countHealingAttack + ";";
             string attackMessage = " выбрал атаку - ";
-            string skippingMove = "Пропуск хода!";
-
+            string messageSkippingMove = "Пропуск хода!";
+            string messageUsedFireball = "Фаербол использован! Повторное использование возможно после Взрыва!";
+            string messageinputIrror = "Такой команды не существует!";
 
             while (closeProgram == false)
             {
                 Console.WriteLine(hero, messageHealthHero);
                 Console.WriteLine(boss, messagehealthBoss);
-                Console.WriteLine(playerMenu, messageSimply, messageFireball, messageExplosion, messageHealing, messageSmoke);
-                inputСommands = int.Parse(Console.ReadLine());
 
-                switch (inputСommands)
+                Console.WriteLine(playerMenu, messageSimply, messageFireball, messageExplosion, messageHealing);
+                inputCommand = int.Parse(Console.ReadLine());
+
+                switch (inputCommand)
                 {
-                    case 1:
-                        if (smokeAttackBoss != false)
-                        {
-                            energyHero -= energySimplyAttack;
+                    case 1:                       
                             healthPointsBoss -= damageSimplyAttack;
-                            Console.WriteLine(hero, attackMessage, messageSimply);
-                            usedFireball = false;
-                        }
-                        else
-                        {
-                            Console.WriteLine(hero, skippingMove, boss, attackMessage, messageSmoke);
-                        }
+                            Console.WriteLine(hero, attackMessage, messageSimply);                            
                         break;
 
                     case 2:
-                        if (usedFireball != true)
+                        if (usedFireball == false)
                         {
-                            if (smokeAttackBoss != false)
-                            {
                                 energyHero -= energyConsumptionByFireball;
                                 healthPointsBoss -= damageFireballAttack;
                                 Console.WriteLine(hero, attackMessage, messageFireball);
                                 usedFireball = true;
-                            }
-                            else
-                            {
-                                Console.WriteLine(hero, skippingMove, boss, attackMessage, messageSmoke);
-                            }
                             break;
                         }
                         else
                         {
-                            Console.WriteLine(hero, skippingMove, hero, attackMessage, messageSmoke);
+                            Console.WriteLine(hero, messageSkippingMove, messageUsedFireball);
                         }
-                        break;
-                        break;
+                        break;                   
 
                     case 3:
-                        if (smokeAttackBoss != false)
+                        if (usedFireball == true)
                         {
-                            energyHero -= energyConsumptionByExplosion;
                             healthPointsBoss -= damageExplosionAttack;
                             Console.WriteLine(hero, attackMessage, messageExplosion);
                             usedFireball = false;
                         }
-                        else
-                        {
-                            Console.WriteLine(hero, skippingMove, hero, attackMessage, messageSmoke);
-                        }
                         break;
 
                     case 4:
-                        energyHero -= energyConsumptionByHealing;
+                        energyHero = defaultEnergyHero;
                         healthPointsHero += healingAttack;
-                        Console.WriteLine(hero,  attackMessage, messageHealing);
-                        usedFireball = false;
-                        break;
-
-                    case 5:
-                        energyHero -= energySimplySmoke;
-                        energyHero += smokeAttack;
-                        Console.WriteLine(hero, attackMessage, messageSmoke);
-                        smokeAttackHero = true;
+                        if (healthPointsHero > 1000)
+                        {
+                            healthPointsHero = defaultHealthPointsHero;
+                            countHealingAttack--;
+                        }                       
                         break;
 
                     default:
-
+                        Console.WriteLine(messageinputIrror, messageSkippingMove);
                         break;
-
-
                 }
             }
         }
