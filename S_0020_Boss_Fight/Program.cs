@@ -55,16 +55,14 @@ namespace S_0020_Boss_Fight
             string messageBoss = "Готов к бою  ";
             string messageNotHealingAttack = "Лечение невозможно";
             string messageСonditionFireball = " Можно вызывать, только если был использован огненный шар.\n    Для повторного применения надо повторно использовать огненный шар. ";
-            string messageСonditionFireballUsed = ChoiceExplosion + messageExplosion + damageExplosionAttack + messageСonditionFireball + messageNotUsedFireball;
-
-            
+            string messageСonditionFireballUsed = "Фаербол не использован ";
 
             while (healthPointsHero > 0 && healthPointsBoss > 0)
             {
                 Console.WriteLine(playerMenu +
                     "\n" + ChoiceSimplyAttack + messageSimply + damageSimplyAttack +
-                    "\n" + ChoiceFireball + messageFireball + damageFireballAttack + messageEnergyConsumptionByFireball + energyConsumptionByFireball + 
-                    "\n" + messageСonditionFireballUsed +
+                    "\n" + ChoiceFireball + messageFireball + damageFireballAttack + messageEnergyConsumptionByFireball + energyConsumptionByFireball +
+                    "\n" + ChoiceExplosion + messageExplosion + damageExplosionAttack + messageСonditionFireball + messageСonditionFireballUsed +
                     "\n" + ChoiceHealing + messageHealing + healingAttack + messageCountHealingAttack + countHealingAttack);
                 Console.WriteLine();
                 Console.WriteLine(hero + messageHealth + healthPointsHero + messageEnergyHero + energyHero);
@@ -93,7 +91,7 @@ namespace S_0020_Boss_Fight
                             healthPointsBoss -= damageFireballAttack;
                             messagePlayer = hero + attackMessage + ChoiceFireball + messageFireball + damageFireballAttack + messageEnergyHero + energyConsumptionByFireball;
                             usedFireball = true;
-                            messageСonditionFireballUsed = ChoiceExplosion + messageExplosion + damageExplosionAttack + messageСonditionFireball + messageUsedFireball;
+                            messageСonditionFireballUsed =  messageUsedFireball;
                             break;
                         }
                         else
@@ -109,7 +107,7 @@ namespace S_0020_Boss_Fight
                             healthPointsBoss -= damageExplosionAttack;
                             messagePlayer = hero + attackMessage + ChoiceExplosion + messageExplosion + damageExplosionAttack;
                             usedFireball = false;
-                            messageСonditionFireballUsed = ChoiceExplosion + messageExplosion + damageExplosionAttack + messageСonditionFireball + messageNotUsedFireball;
+                            messageСonditionFireballUsed = messageNotUsedFireball;
                         }
                         else
                         {
