@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace S_0020_Boss_Fight
 {
@@ -13,8 +6,12 @@ namespace S_0020_Boss_Fight
     {
         static void Main(string[] args)
         {
-            Random rand = new Random();
-            int usedFireball = 0;
+            Random random = new Random();
+
+            const string ChoiceSimplyAttack = "1";
+            const string ChoiceFireball = "2";
+            const string ChoiceExplosion = "3";
+            const string ChoiceHealing = "4";
 
             int healthPointsHero = 1000;
             int healthPointsBoss = 1000;
@@ -30,11 +27,14 @@ namespace S_0020_Boss_Fight
             int healingAttack = 200;
             int countHealingAttack = 5;
             int damageAttackBoss = 0;
+            int usedFireball = 0;
+
+            string inputСommand = "";
 
             string boss = "Босс ";
             string hero = "Герой ";
-            string messageHealth = "здоровье - ";
-            string messageEnergyHero = "; энергия - " ;
+            string messageHealth = " здоровье - ";
+            string messageEnergyHero = "; энергия - ";
             string playerMenu = "Какие Ваши действия? \nварианты: ";
             string attackMessage = " атаковал ";
             string messageUsedFireball = "Фаербол использован! Повторное использование возможно после Взрыва!";
@@ -43,13 +43,13 @@ namespace S_0020_Boss_Fight
             string messageDeathHero = "Герой умер. Вы проиграли!";
             string messageDeathBoss = "Босс умер. ВЫ выиграли!";
             string messageDraw = "Ничья";
-            string messageSimply = "1 - обычная атака: урон - ";
-            string messageFireball = "2 - фаербол: урон - ";
-            string messageEnergyConsumptionByFireball  =  "затраты энергии - ";
-            string messageExplosion = "3 - взрыв: урон - ";
-            string messageСonditionFireball = " Можно вызывать, только если был использован огненный шар.\n    Для повторного применения надо повторно использовать огненный шар.";
-            string messageHealing = "4 - лечение: востонавливает здоровья - ";
-            string messageCountHealingAttack  =  " осталось лечений - ";
+            string messageSimply = " - обычная атака: урон - ";
+            string messageFireball = " - фаербол: урон - ";
+            string messageEnergyConsumptionByFireball = " затраты энергии - ";
+            string messageExplosion = " - взрыв: урон - ";
+            string messageСonditionFireball = " Можно вызывать, только если был использован огненный шар.\n    Для повторного применения надо повторно использовать огненный шар. Использованно - ";
+            string messageHealing = " - лечение: востонавливает здоровья - ";
+            string messageCountHealingAttack = " осталось лечений - ";
             string messageSkippingMove = "Пропуск хода!";
             string messagePlayer = "Готов к бою ";
             string messageBoss = "Готов к бою  ";
@@ -58,34 +58,36 @@ namespace S_0020_Boss_Fight
             while (healthPointsHero > 0 && healthPointsBoss > 0)
             {
                 Console.WriteLine(playerMenu +
-                    "\n" + messageSimply + damageSimplyAttack +
-                    "\n" + messageFireball + damageFireballAttack + messageEnergyConsumptionByFireball + energyConsumptionByFireball + 
-                    "\n" + messageExplosion + damageExplosionAttack + messageСonditionFireball + usedFireball +
-                    "\n" + messageHealing + healingAttack + messageCountHealingAttack + countHealingAttack);
-                 Console.WriteLine();
+                    "\n" + ChoiceSimplyAttack + messageSimply + damageSimplyAttack +
+                    "\n" + ChoiceFireball + messageFireball + damageFireballAttack + messageEnergyConsumptionByFireball + energyConsumptionByFireball +
+                    "\n" + ChoiceExplosion + messageExplosion + damageExplosionAttack + messageСonditionFireball + usedFireball +
+                    "\n" + ChoiceHealing + messageHealing + healingAttack + messageCountHealingAttack + countHealingAttack);
+                Console.WriteLine();
                 Console.WriteLine(hero + messageHealth + healthPointsHero + messageEnergyHero + energyHero);
                 Console.WriteLine(boss + messageHealth + healthPointsBoss);
                 Console.WriteLine();
                 Console.WriteLine(messagePlayer);
                 Console.WriteLine(messageBoss);
                 Console.Write("Введите номер атаки - ");
-                int.TryParse(Console.ReadLine(),out int result);               
+
+                inputСommand = Console.ReadLine();
+
                 Console.WriteLine();
 
-                switch (result)
+                switch (inputСommand)
                 {
-                    case 1:
+                    case "1":
                         healthPointsBoss -= damageSimplyAttack;
-                        messagePlayer = hero + attackMessage + messageSimply + damageSimplyAttack;
-
+                        messagePlayer = hero + attackMessage + ChoiceSimplyAttack + messageSimply + damageSimplyAttack;
                         break;
 
-                    case 2:
-                        if (energyConsumptionByFireball > 0)
+                    case "2":
+
+                        if (energyHero >= 100 )
                         {
                             energyHero -= energyConsumptionByFireball;
                             healthPointsBoss -= damageFireballAttack;
-                            messagePlayer = hero + attackMessage + messageFireball + damageFireballAttack + messageEnergyHero + energyConsumptionByFireball;
+                            messagePlayer = hero + attackMessage + ChoiceFireball + messageFireball + damageFireballAttack + messageEnergyHero + energyConsumptionByFireball;
                             usedFireball = 1;
                             break;
                         }
@@ -95,29 +97,31 @@ namespace S_0020_Boss_Fight
                         }
                         break;
 
-                    case 3:
+                    case "3":
+
                         if (usedFireball == 1)
                         {
                             healthPointsBoss -= damageExplosionAttack;
-                            messagePlayer = hero + attackMessage + messageExplosion + damageExplosionAttack;
+                            messagePlayer = hero + attackMessage + ChoiceExplosion + messageExplosion + damageExplosionAttack;
                             usedFireball = 0;
                         }
                         else
                         {
                             messagePlayer = hero + messageSkippingMove + messageUsedFireball;
-                        }                      
+                        }
                         break;
 
-                    case 4:
-                        if(countHealingAttack > 0)
+                    case "4":
+
+                        if (countHealingAttack > 0)
                         {
-                            messagePlayer = hero + attackMessage + messageHealing + healingAttack;
+                            messagePlayer = hero + attackMessage + ChoiceHealing + messageHealing + healingAttack;
                             energyHero = energyDefaultHero;
                             healthPointsHero += healingAttack;
 
                             if (healthPointsHero > 1000)
                             {
-                                healthPointsHero = defaultHealthPointsHero;                       
+                                healthPointsHero = defaultHealthPointsHero;
                             }
                             countHealingAttack--;
                         }
@@ -131,27 +135,27 @@ namespace S_0020_Boss_Fight
                         messagePlayer = messageInputIrror + messageSkippingMove;
                         break;
                 }
-                damageAttackBoss = (int)rand.Next(50, 150);
-                healthPointsHero -= damageAttackBoss;
-                messageBoss =boss + attackMessage +damageAttackBoss;
-                Console.Clear();
 
+                damageAttackBoss = (int)random.Next(50, 150);
+                healthPointsHero -= damageAttackBoss;
+                messageBoss = boss + attackMessage + damageAttackBoss;
+                Console.Clear();
             }
+
             if (healthPointsHero > 0 && healthPointsBoss > 0)
             {
-                Console.WriteLine(messageDraw);
-                Console.ReadKey();
+                Console.WriteLine(messageDraw);                
             }
             else if (healthPointsBoss > 0)
             {
-                Console.WriteLine(messageDeathHero);
-                Console.ReadKey();
+                Console.WriteLine(messageDeathHero);            
             }
             else
             {
                 Console.WriteLine(messageDeathBoss);
-                Console.ReadKey();
             }
+
+            Console.ReadKey();
         }
-    }        
+    }
 }
