@@ -6,12 +6,13 @@ namespace S_0020_Boss_Fight
     {
         static void Main(string[] args)
         {
-            Random random = new Random();
 
             const string ChoiceSimplyAttack = "1";
             const string ChoiceFireball = "2";
             const string ChoiceExplosion = "3";
             const string ChoiceHealing = "4";
+
+            Random random = new Random();
 
             int healthPointsHero = 1000;
             int healthPointsBoss = 1000;
@@ -78,14 +79,14 @@ namespace S_0020_Boss_Fight
 
                 switch (inputСommand)
                 {
-                    case "1":
+                    case ChoiceSimplyAttack:
                         healthPointsBoss -= damageSimplyAttack;
                         messagePlayer = hero + attackMessage + ChoiceSimplyAttack + messageSimply + damageSimplyAttack;
                         break;
 
-                    case "2":
+                    case ChoiceFireball:
 
-                        if (energyHero >= 100 )
+                        if (energyHero >= energyConsumptionByFireball)
                         {
                             energyHero -= energyConsumptionByFireball;
                             healthPointsBoss -= damageFireballAttack;
@@ -100,7 +101,7 @@ namespace S_0020_Boss_Fight
                         }
                         break;
 
-                    case "3":
+                    case ChoiceExplosion:
 
                         if (usedFireball == true)
                         {
@@ -115,7 +116,7 @@ namespace S_0020_Boss_Fight
                         }
                         break;
 
-                    case "4":
+                    case ChoiceHealing:
 
                         if (countHealingAttack > 0)
                         {
