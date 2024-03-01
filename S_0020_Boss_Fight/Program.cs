@@ -7,10 +7,10 @@ namespace S_0020_Boss_Fight
         static void Main(string[] args)
         {
 
-            const string ChoiceSimplyAttack = "1";
-            const string ChoiceFireball = "2";
-            const string ChoiceExplosion = "3";
-            const string ChoiceHealing = "4";
+            const string CommandSimplyAttack = "1";
+            const string CommandFireball = "2";
+            const string CommandExplosion = "3";
+            const string CommandHealing = "4";
 
             Random random = new Random();
 
@@ -61,10 +61,10 @@ namespace S_0020_Boss_Fight
             while (healthPointsHero > 0 && healthPointsBoss > 0)
             {
                 Console.WriteLine(playerMenu +
-                    "\n" + ChoiceSimplyAttack + messageSimply + damageSimplyAttack +
-                    "\n" + ChoiceFireball + messageFireball + damageFireballAttack + messageEnergyConsumptionByFireball + energyConsumptionByFireball +
-                    "\n" + ChoiceExplosion + messageExplosion + damageExplosionAttack + messageСonditionFireball + messageСonditionFireballUsed +
-                    "\n" + ChoiceHealing + messageHealing + healingAttack + messageCountHealingAttack + countHealingAttack);
+                    "\n" + CommandSimplyAttack + messageSimply + damageSimplyAttack +
+                    "\n" + CommandFireball + messageFireball + damageFireballAttack + messageEnergyConsumptionByFireball + energyConsumptionByFireball +
+                    "\n" + CommandExplosion + messageExplosion + damageExplosionAttack + messageСonditionFireball + messageСonditionFireballUsed +
+                    "\n" + CommandHealing + messageHealing + healingAttack + messageCountHealingAttack + countHealingAttack);
                 Console.WriteLine();
                 Console.WriteLine(hero + messageHealth + healthPointsHero + messageEnergyHero + energyHero);
                 Console.WriteLine(boss + messageHealth + healthPointsBoss);
@@ -79,18 +79,18 @@ namespace S_0020_Boss_Fight
 
                 switch (inputСommand)
                 {
-                    case ChoiceSimplyAttack:
+                    case CommandSimplyAttack:
                         healthPointsBoss -= damageSimplyAttack;
-                        messagePlayer = hero + attackMessage + ChoiceSimplyAttack + messageSimply + damageSimplyAttack;
+                        messagePlayer = hero + attackMessage + CommandSimplyAttack + messageSimply + damageSimplyAttack;
                         break;
 
-                    case ChoiceFireball:
+                    case CommandFireball:
 
                         if (energyHero >= energyConsumptionByFireball)
                         {
                             energyHero -= energyConsumptionByFireball;
                             healthPointsBoss -= damageFireballAttack;
-                            messagePlayer = hero + attackMessage + ChoiceFireball + messageFireball + damageFireballAttack + messageEnergyHero + energyConsumptionByFireball;
+                            messagePlayer = hero + attackMessage + CommandFireball + messageFireball + damageFireballAttack + messageEnergyHero + energyConsumptionByFireball;
                             usedFireball = true;
                             messageСonditionFireballUsed =  messageUsedFireball;
                             break;
@@ -101,12 +101,12 @@ namespace S_0020_Boss_Fight
                         }
                         break;
 
-                    case ChoiceExplosion:
+                    case CommandExplosion:
 
                         if (usedFireball == true)
                         {
                             healthPointsBoss -= damageExplosionAttack;
-                            messagePlayer = hero + attackMessage + ChoiceExplosion + messageExplosion + damageExplosionAttack;
+                            messagePlayer = hero + attackMessage + CommandExplosion + messageExplosion + damageExplosionAttack;
                             usedFireball = false;
                             messageСonditionFireballUsed = messageNotUsedFireball;
                         }
@@ -116,11 +116,11 @@ namespace S_0020_Boss_Fight
                         }
                         break;
 
-                    case ChoiceHealing:
+                    case CommandHealing:
 
                         if (countHealingAttack > 0)
                         {
-                            messagePlayer = hero + attackMessage + ChoiceHealing + messageHealing + healingAttack;
+                            messagePlayer = hero + attackMessage + CommandHealing + messageHealing + healingAttack;
                             energyHero = energyDefaultHero;
                             healthPointsHero += healingAttack;
 
