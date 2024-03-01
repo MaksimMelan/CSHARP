@@ -13,8 +13,8 @@ namespace _0001_Variables
             int energyHero = 1000;
             int energyDefaultHero = 1000;
 
-            string boss = "Босс ";
-            string hero = "Герой ";
+            string bossName = "Босс ";
+            string heroName = "Герой ";
 
             byte powerСharacteristic = 10;
             sbyte moralPoints = -10;
