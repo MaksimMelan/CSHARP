@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _0002_string
 {
@@ -22,7 +17,7 @@ namespace _0002_string
             Console.WriteLine("Сколько вам лет?");
             age = Console.ReadLine();
 
-            Console.WriteLine("Место проживания? ");
+            Console.WriteLine("Ваше место проживания? ");
             cityResidence = Console.ReadLine();
 
             Console.WriteLine("Кем вы работаете?");
