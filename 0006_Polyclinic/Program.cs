@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.ConstrainedExecution;
 
 namespace _0006_Polyclinic
 {
@@ -6,20 +7,27 @@ namespace _0006_Polyclinic
     {
         static void Main(string[] args)
         {
+            int MinutesInHour = 60;
+
             string messageInputCountPeople = "Введите колличестов людей в очереди: ";
             string messageWaitingTime = "Время ожидания вашей очереди - ";
 
             int countPeople = 0;
             int timeOnePerson = 10;
-            int waitingTime = 0;
+            int waitingTimeMinutes = 0;
+            int waitingTimeHours = 0;
+            int waitingTimeMinutesStat = 0; 
 
             Console.WriteLine(messageInputCountPeople);
 
-            countPeople = int.Parse(messageWaitingTime);
+            countPeople = int.Parse(Console.ReadLine());
 
-            waitingTime = countPeople * timeOnePerson;
+            waitingTimeMinutes = countPeople * timeOnePerson;
+            waitingTimeHours = waitingTimeMinutes / MinutesInHour;
+            waitingTimeMinutesStat = waitingTimeMinutes % MinutesInHour;
 
-            Console.WriteLine(messageWaitingTime + waitingTime);
+
+            Console.WriteLine(messageWaitingTime + waitingTimeHours + " часа " + waitingTimeMinutesStat + " минут.");
 
             Console.ReadKey();
         }
