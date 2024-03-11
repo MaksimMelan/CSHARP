@@ -6,13 +6,15 @@ namespace _0010_sumOfNumbers
     {
         static void Main(string[] args)
         {
-            Random rnd = new Random();
-
-            int randomNumber = rnd.Next(1, 101);
+            Random random = new Random();
 
             int sum = 0;
             int multiplicityOfNumberOne = 3;
-            int multiplicityOfNumberTwo = 5;  
+            int multiplicityOfNumberTwo = 5;
+            int maxOfRandomNumber = 100;
+            int minOfRandomNumber = 1;
+
+            int randomNumber = random.Next(minOfRandomNumber, maxOfRandomNumber);
 
             for (int i = 0; i <= randomNumber; i++)
             {
