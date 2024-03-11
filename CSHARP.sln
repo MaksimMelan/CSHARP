@@ -103,6 +103,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0010_sumOfNumbers", "0010_s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0011_ConsoleMenu", "0011_ConsoleMenu\0011_ConsoleMenu.csproj", "{D512C0F6-F50D-4AE5-8999-346E462B8A08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0012_CurrencyConverter", "0012_CurrencyConverter\0012_CurrencyConverter.csproj", "{FB20CF1F-B48A-4601-B902-FDBD476CFC35}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -289,6 +291,10 @@ Global
 		{D512C0F6-F50D-4AE5-8999-346E462B8A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D512C0F6-F50D-4AE5-8999-346E462B8A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D512C0F6-F50D-4AE5-8999-346E462B8A08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB20CF1F-B48A-4601-B902-FDBD476CFC35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB20CF1F-B48A-4601-B902-FDBD476CFC35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB20CF1F-B48A-4601-B902-FDBD476CFC35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB20CF1F-B48A-4601-B902-FDBD476CFC35}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -339,6 +345,7 @@ Global
 		{A94DB80F-22E1-4ECB-A9B6-8C5697DAE490} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 		{93BF75FB-1D68-4A0F-A319-393B50953D7B} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 		{D512C0F6-F50D-4AE5-8999-346E462B8A08} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
+		{FB20CF1F-B48A-4601-B902-FDBD476CFC35} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B098DCA-6170-4FC3-9DC2-5D85A6973C0C}
