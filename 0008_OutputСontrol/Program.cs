@@ -7,15 +7,25 @@ namespace _0008_OutputСontrol
         static void Main(string[] args)
         {
             string input = "";
+            string exitCommand = "exit";
+            bool exit = false; 
 
             Console.WriteLine($"Введите слово 'exit'  для выхода из программы.");
             Console.WriteLine();
 
-            while (input != "exit")
+            while (exit == false)
             {
                 input = Console.ReadLine();
-            }
-            Console.WriteLine("Выход из программы.");
+                Console.WriteLine();
+
+                if ( input == exitCommand ) 
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Выход из программы.");
+                    Console.ReadKey();
+                    exit = true;
+                }              
+            }         
         }
     }
 }
