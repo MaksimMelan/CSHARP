@@ -8,12 +8,12 @@ namespace _0008_OutputСontrol
         {
             string input = "";
             string exitCommand = "exit";
-            bool exit = false; 
+            bool isWorking = true; 
 
-            Console.WriteLine($"Введите слово 'exit'  для выхода из программы.");
+            Console.WriteLine($"Введите слово {exitCommand}  для выхода из программы.");
             Console.WriteLine();
 
-            while (exit == false)
+            while (isWorking)
             {
                 input = Console.ReadLine();
                 Console.WriteLine();
@@ -23,7 +23,7 @@ namespace _0008_OutputСontrol
                     Console.WriteLine();
                     Console.WriteLine("Выход из программы.");
                     Console.ReadKey();
-                    exit = true;
+                    isWorking = false;
                 }              
             }         
         }
