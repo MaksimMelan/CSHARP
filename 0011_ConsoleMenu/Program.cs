@@ -23,17 +23,18 @@ namespace _0011_ConsoleMenu
             string messageNameReceived = "Имя получено! ";
             string passwordUser = string.Empty;
             string passwordReceived = "Пароль получен. ";
-            string messagePasswordRequest = "Введите пароль";
             string missingPasswordUserMessage = "Пароль не установлен. Устновите пароль.";
             string invalidPasswordMessage = "Пароль не верный.";
             string noOption = "Такого варианта нет. ";
             string programMenu = $"Выберете действие:\n" +
                     $"{CommandSetName} - установите имя. \n" +
-                    $"{CommandChangeConsoleColore} - именение цвета консоли - зелёный.\n" +
+                    $"{CommandChangeConsoleColore} - изменение цвета консоли - зелёный.\n" +
                     $"{InitialConsoleSettings} - начальные настройки консоли.\n" +
                     $"{CommandSetPassword} - установите пароль.\n" +
                     $"{CommandWriteName} - вывести имя после ввода пароля.\n" +
                     $"{CommandEsc} - выход из программы. ";
+            string messagePasswordRequest = "Введите пароль";
+            string messageNameUserRequest = "Введите имя";
 
             Console.WriteLine(programMenu);
 
@@ -45,6 +46,7 @@ namespace _0011_ConsoleMenu
                 switch (userInput)
                 {
                     case CommandSetName:
+                        Console.WriteLine(messageNameUserRequest);
                         nameUser = Console.ReadLine();
 
                         if (userInput != invalidInput)
