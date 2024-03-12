@@ -10,12 +10,12 @@ namespace _0012_CurrencyConverter
     {
         static void Main(string[] args)
         {
-            const string RurToUsd = "1";
-            const string RurToCnh = "2";
-            const string UsdToRur = "3";
-            const string UsdToCnh = "4";
-            const string CnhToRur = "5";
-            const string CnhToUsd = "6";
+            const string CommandRurToUsd = "1";
+            const string CommandRurToCnh = "2";
+            const string CommandUsdToRur = "3";
+            const string CommandUsdToCnh = "4";
+            const string CommandCnhToRur = "5";
+            const string CommandCnhToUsd = "6";
             const string CommandExit = "7";
 
             double rurCount = 1000;
@@ -40,9 +40,9 @@ namespace _0012_CurrencyConverter
             string programMenu = $"\nКурс валют USD/RUR: {usdToRur}, USD/CNH: {usdToCnh}, CNH/RUR: {cnhToRur}." +
                                  $"\n "+
                                  $"\nОперации на выбор:" +
-                                 $"\n{RurToUsd} - обменять рубли на доллары.\n{RurToCnh} - обменять рубли на юани." +
-                                 $"\n{UsdToRur} - обменять доллраны на рубли.\n{UsdToCnh} - обменять доллары на юани." +
-                                 $"\n{CnhToRur} - обмен юани на рубли.\n{CnhToUsd} - обмен юаней на доллары." +
+                                 $"\n{CommandRurToUsd} - обменять рубли на доллары.\n{CommandRurToCnh} - обменять рубли на юани." +
+                                 $"\n{CommandUsdToRur} - обменять доллраны на рубли.\n{CommandUsdToCnh} - обменять доллары на юани." +
+                                 $"\n{CommandCnhToRur} - обмен юани на рубли.\n{CommandCnhToUsd} - обмен юаней на доллары." +
                                  $"\n{CommandExit} - закрыть программу";
 
             while (isExit == false)
@@ -58,7 +58,7 @@ namespace _0012_CurrencyConverter
 
                 switch (userInput)
                 {
-                    case RurToUsd:
+                    case CommandRurToUsd:
                         Console.WriteLine(requestPurchaseVolume);
                         purchaseVolume = Convert.ToDouble(Console.ReadLine());
 
@@ -74,7 +74,7 @@ namespace _0012_CurrencyConverter
 
                         break;
 
-                    case RurToCnh:
+                    case CommandRurToCnh:
                         Console.WriteLine(requestPurchaseVolume);
                         purchaseVolume = Convert.ToDouble(Console.ReadLine());
 
@@ -90,7 +90,7 @@ namespace _0012_CurrencyConverter
 
                         break;
 
-                    case UsdToRur:
+                    case CommandUsdToRur:
                         Console.WriteLine(requestPurchaseVolume);
                         purchaseVolume = Convert.ToDouble(Console.ReadLine());
 
@@ -106,7 +106,7 @@ namespace _0012_CurrencyConverter
 
                         break;
 
-                    case UsdToCnh:
+                    case CommandUsdToCnh:
                         Console.WriteLine(requestPurchaseVolume);
                         purchaseVolume = Convert.ToDouble(Console.ReadLine());
 
@@ -122,7 +122,7 @@ namespace _0012_CurrencyConverter
 
                         break;
 
-                    case CnhToRur:
+                    case CommandCnhToRur:
                         Console.WriteLine(requestPurchaseVolume);
                         purchaseVolume = Convert.ToDouble(Console.ReadLine());
 
@@ -138,7 +138,7 @@ namespace _0012_CurrencyConverter
 
                         break;
 
-                    case CnhToUsd:
+                    case CommandCnhToUsd:
                         Console.WriteLine(requestPurchaseVolume);
                         purchaseVolume = Convert.ToDouble(Console.ReadLine());
 
