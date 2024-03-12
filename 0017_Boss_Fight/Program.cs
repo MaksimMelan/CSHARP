@@ -26,6 +26,9 @@ namespace _0017_Boss_Fight
             int damageExplosionAttack = 200;
             int healingAttack = 200;
             int countHealingAttack = 5;
+
+            int damageMinAttackBoss = 50;
+            int damageMaxAttackBoss = 100;
             int damageAttackBoss = 0;
 
             bool isUsedFireball = false;
@@ -124,7 +127,7 @@ namespace _0017_Boss_Fight
                             energyHero = energyDefaultHero;
                             healthPointsHero += healingAttack;
 
-                            if (healthPointsHero > 1000)
+                            if (healthPointsHero > defaultHealthPointsHero)
                             {
                                 healthPointsHero = defaultHealthPointsHero;
                             }
@@ -141,7 +144,7 @@ namespace _0017_Boss_Fight
                         break;
                 }
 
-                damageAttackBoss = (int)random.Next(50, 150);
+                damageAttackBoss = (int)random.Next(damageMinAttackBoss, damageMaxAttackBoss);
                 healthPointsHero -= damageAttackBoss;
                 messageBoss = bossName + attackMessage + damageAttackBoss;
                 Console.Clear();
