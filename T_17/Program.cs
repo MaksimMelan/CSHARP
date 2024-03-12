@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace T_17
 {
@@ -26,6 +22,7 @@ namespace T_17
             }
 
             Console.WriteLine($"Минимальную степень {power} , превосходящую заданное число {givenNumber}, равна - {powerMin}");
+            Console.ReadKey();
         }
     }
 }

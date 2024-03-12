@@ -15,6 +15,7 @@ namespace _0014_password
                 Console.Write($"У Вас {i} попытки\n");
                 Console.Write($"Введите пароль: "); ;
                 userInput = Console.ReadLine();
+
                 if (userInput == password)
                 {
                     Console.WriteLine("Секретное слово: ПАРОЛЬ.");
