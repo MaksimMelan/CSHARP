@@ -9,8 +9,10 @@ namespace _0015_MultiplesOfNumbers
             int numberN;
             int startInterval = 10;
             int endInterval = 25;
+
             int minRange = 50;
             int maxRange = 150;
+
             int counter = 0;
 
             Random random = new Random();
@@ -25,7 +27,7 @@ namespace _0015_MultiplesOfNumbers
                 }
             }
             
-            Console.WriteLine($"Трехзначных чисел кратных {numberN} - {counter}");
+            Console.WriteLine($"Количество чисел кратных {numberN} - {counter}");
             Console.ReadKey();
         }
     }
