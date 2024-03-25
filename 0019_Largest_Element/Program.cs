@@ -30,6 +30,7 @@ namespace _0019_Largest_Element
                     array[i, j] = random.Next(minNumberRandomness, maxNumberRandomness);
                     Console.Write(array[i, j] + "  ");
                 }
+
                 Console.WriteLine();
             }
 
@@ -63,6 +64,7 @@ namespace _0019_Largest_Element
                 {                   
                     Console.Write(array[i, j] + "  ");                  
                 }
+
                 Console.WriteLine();
             }
 
