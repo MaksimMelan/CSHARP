@@ -14,6 +14,8 @@ namespace _0019_Largest_Element
             int minNumberRandomness = 1;
             int maxNumberRandomness = 100;
 
+            int numberToReplace = 0;
+
             int[,] array = new int[numberOfRows, numberOfColumns];
 
             int maxElement = int.MinValue;
@@ -50,7 +52,7 @@ namespace _0019_Largest_Element
                 {
                     if (array[i, j] == maxElement)
                     {
-                         array[i, j] = 0;
+                         array[i, j] = numberToReplace;
                     }                    
                 }               
             }
