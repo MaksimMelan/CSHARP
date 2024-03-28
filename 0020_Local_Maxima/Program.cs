@@ -18,18 +18,20 @@ namespace _0020_Local_Maxima
             int indentationForDataOutput = 10;
             int indexNumber = 0;
             int localMaxima = 0;
+
             string messageLocalMaxima = "\nВывод номера индекса и черз дробь(/) его локального максимума: ";
-            Console.WriteLine($"Создан массив");
-            Console.WriteLine();
+
+            Console.SetCursorPosition(indentationForDataOutput, Console.CursorTop);
+            Console.WriteLine($"Создан массив\n");
 
             for (int i = 0; i < numberOfColumns; i++)
             {
                 array[i] = random.Next(minNumberRandomness, maxNumberRandomness);
                 Console.Write(array[i] + "  ");
             }
-            Console.WriteLine();
 
-            Console.Write($"{messageLocalMaxima}\n\n");
+            Console.Write($"\n{messageLocalMaxima}\n\n");
+
             for (int i = 0; i < array.Length - 1; i++)
             {
                 if ((i == 0 || array[i] > array[i - 1]) && (i == array.Length - 1 || array[i] > array[i + 1]))
