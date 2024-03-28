@@ -27,6 +27,7 @@ namespace _0020_Local_Maxima
             for (int i = 0; i < numberOfColumns; i++)
             {
                 array[i] = random.Next(minNumberRandomness, maxNumberRandomness);
+
                 Console.Write(array[i] + "  ");
             }
 
@@ -38,9 +39,11 @@ namespace _0020_Local_Maxima
                 {
                     indexNumber = i - 1;
                     localMaxima = array[i];
+
                     Console.WriteLine($"{indexNumber}/{localMaxima}".PadLeft(indentationForDataOutput));
                 }
             }
+
             Console.WriteLine();
             Console.ReadKey();
         }
