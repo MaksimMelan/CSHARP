@@ -8,7 +8,7 @@ namespace _0020_Local_Maxima
         {
             Random random = new Random();
 
-            int numberOfColumns = 20;
+            int numberOfColumns = 15;
 
             int minNumberRandomness = -100;
             int maxNumberRandomness = 100;
@@ -28,20 +28,34 @@ namespace _0020_Local_Maxima
             {
                 array[i] = random.Next(minNumberRandomness, maxNumberRandomness);
 
-                Console.Write(array[i] + "  ");
+                Console.WriteLine($"№{i +1 } {array[i]}  ");
             }
 
             Console.Write($"\n{messageLocalMaxima}\n\n");
 
-            for (int i = 0; i < array.Length - 1; i++)
+            if (array[0] > array[1])
             {
-                if ((i == 0 || array[i] > array[i - 1]) && (i == array.Length - 1 || array[i] > array[i + 1]))
+                indexNumber = 0;
+                localMaxima = array[0];
+                Console.WriteLine($"{indexNumber + 1}/{localMaxima}".PadLeft(indentationForDataOutput));
+            }
+
+            for (int i = 1; i < array.Length - 1; i++)
+            {
+                if (array[i] > array[i - 1] && array[i] > array[i + 1])
                 {
-                    indexNumber = i - 1;
+                    indexNumber = i;
                     localMaxima = array[i];
 
-                    Console.WriteLine($"{indexNumber}/{localMaxima}".PadLeft(indentationForDataOutput));
+                    Console.WriteLine($"{indexNumber + 1}/{localMaxima}".PadLeft(indentationForDataOutput));
                 }
+            }
+
+            if(array[array.Length - 1] > array[array.Length -2])
+            {
+                indexNumber = array.Length;
+                localMaxima = array[array.Length - 1];
+                Console.WriteLine($"{indexNumber}/{localMaxima}".PadLeft(indentationForDataOutput));
             }
 
             Console.WriteLine();
