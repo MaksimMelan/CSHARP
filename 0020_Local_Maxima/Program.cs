@@ -35,10 +35,12 @@ namespace _0020_Local_Maxima
 
             Console.Write($"\n{messageLocalMaxima}\n\n");
 
+            int indexOfFirstElement;
+
             if (array[0] > array[1])
             {
-                localMaxima = array[0];
-                Console.WriteLine($"1/{localMaxima}".PadLeft(indentationForDataOutput));
+                indexOfFirstElement = array[0];
+                Console.WriteLine($"1/{indexOfFirstElement}".PadLeft(indentationForDataOutput));
             }
 
             for (int i = 1; i < array.Length - 1; i++)
