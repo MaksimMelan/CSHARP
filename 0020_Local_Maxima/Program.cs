@@ -15,7 +15,7 @@ namespace _0020_Local_Maxima
             int minNumberRandomness = -100;
             int maxNumberRandomness = 100;
 
-            int[] array = new int[numberOfColumns];
+            int[] arrayNumbers = new int[numberOfColumns];
 
             int indentationForDataOutput = 10;
 
@@ -28,37 +28,32 @@ namespace _0020_Local_Maxima
 
             for (int i = 0; i < numberOfColumns; i++)
             {
-                array[i] = random.Next(minNumberRandomness, maxNumberRandomness);
+                arrayNumbers[i] = random.Next(minNumberRandomness, maxNumberRandomness);
 
-                Console.WriteLine($"№{i +1 } {array[i]}  ");
+                Console.WriteLine($"№{i +1 } {arrayNumbers[i]}  ");
             }
 
             Console.Write($"\n{messageLocalMaxima}\n\n");
 
-            int indexOfFirstElement;
-
-            if (array[0] > array[1])
+            if (arrayNumbers[0] > arrayNumbers[1])
             {
-                indexOfFirstElement = array[0];
-                Console.WriteLine($"1/{indexOfFirstElement}".PadLeft(indentationForDataOutput));
+                Console.WriteLine($"1/{arrayNumbers[0]}".PadLeft(indentationForDataOutput));
             }
 
-            for (int i = 1; i < array.Length - 1; i++)
+            for (int i = 1; i < arrayNumbers.Length - 1; i++)
             {
-                if (array[i] > array[i - 1] && array[i] > array[i + 1])
+                if (arrayNumbers[i] > arrayNumbers[i - 1] && arrayNumbers[i] > arrayNumbers[i + 1])
                 {
-                    localMaxima = array[i];
-
-                    Console.WriteLine($"{i + 1}/{localMaxima}".PadLeft(indentationForDataOutput));
+                    Console.WriteLine($"{i + 1}/{arrayNumbers[i]}".PadLeft(indentationForDataOutput));
                 }
             }
 
-            int indexOfLastElement;
+            int indexOfLastElement = arrayNumbers.Length - 1;
 
-            if (array[array.Length - 1] > array[array.Length -2])
+            if (arrayNumbers[arrayNumbers.Length - 1] > arrayNumbers[indexOfLastElement - 1])
             {
-                indexOfLastElement = array[array.Length - 1];
-                Console.WriteLine($"{array.Length}/{indexOfLastElement}".PadLeft(indentationForDataOutput));
+                indexOfLastElement = arrayNumbers[arrayNumbers.Length - 1];
+                Console.WriteLine($"{arrayNumbers.Length}/{arrayNumbers[arrayNumbers.Length - 1]}".PadLeft(indentationForDataOutput));
             }
 
             Console.WriteLine();
