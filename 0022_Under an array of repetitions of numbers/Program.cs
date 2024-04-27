@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _0022_Under_an_array_of_repetitions_of_numbers
 {
@@ -17,42 +13,39 @@ namespace _0022_Under_an_array_of_repetitions_of_numbers
             int minNumberRandomness = 1;
             int maxNumberRandomness = 10;
 
-            int[] arrayNumbers = new int[numberOfColumns];
+            int[] numbers = new int[numberOfColumns];
 
             for (int i = 0; i < numberOfColumns; i++)
             {
-                arrayNumbers[i] = random.Next(minNumberRandomness, maxNumberRandomness);
-
-                Console.WriteLine($"№{i + 1} {arrayNumbers[i]}  ");
+                numbers[i] = random.Next(minNumberRandomness, maxNumberRandomness);
             }
 
-            int currentNum = arrayNumbers[0];
-            int repeatingNumber = 1;
-            int maxNum = arrayNumbers[0];
-            int amountOfRepetitions = 1;
+            int currentNum = numbers[0];
+            int currentRepeating = 1;
+            int maxRepeateCount = 1;
 
-
-            for (int i = 1; i < arrayNumbers.Length; i++)
+            for (int i = 1; i < numbers.Length; i++)
             {
-                if (arrayNumbers[i] == currentNum)
+                if (numbers[i] == numbers[i - 1])
                 {
-                    repeatingNumber++;
+                    currentRepeating++;
+
                 }
                 else
                 {
-                    if (repeatingNumber > amountOfRepetitions)
-                    {
-                        amountOfRepetitions = repeatingNumber;
-                        maxNum = currentNum;
-                    }
-                    currentNum = arrayNumbers[i];
-                    repeatingNumber = 1;
+                    currentRepeating = 1;
+                }
+
+                if (currentRepeating > maxRepeateCount)
+                {
+                    maxRepeateCount = currentRepeating;
+                    currentNum = numbers[i];
                 }
             }
 
-            Console.WriteLine("Массив: " + string.Join(", ", arrayNumbers));
-            Console.WriteLine("Число: " + maxNum);
-            Console.WriteLine("Количество повторений: " + amountOfRepetitions);
+            Console.WriteLine("Массив: " + string.Join(", ", numbers));
+            Console.WriteLine("Число: " + currentNum);
+            Console.WriteLine("Количество повторений: " + maxRepeateCount);
             Console.ReadKey();
         }
     }

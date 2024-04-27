@@ -1,65 +1,59 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace _0021_Dynamic_Array
+namespace _0022_Under_an_array_of_repetitions_of_numbers
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int[] arrayNumbers = new int[0];
-            int sum = 0;
+            Random random = new Random();
 
-            string sumCommand = "sum";
-            string input = "";
-            string exitCommand = "exit";
-            bool isWorking = true;
+            int numberOfColumns = 30;
 
-            while (isWorking)
+            int minNumberRandomness = 1;
+            int maxNumberRandomness = 10;
+
+            int[] arrayNumbers = {1, 2, 2, 3, 3, 3, 4};
+
+            for (int i = 0; i < arrayNumbers.Length; i++)
             {
-                Console.Clear();
+                //arrayNumbers[i] = random.Next(minNumberRandomness, maxNumberRandomness);
 
-                Console.WriteLine($"Введите число, {sumCommand} или {exitCommand}: ");
+                Console.WriteLine($"№{i + 1} {arrayNumbers[i]}  ");
+            }
 
-                for (int j = 0; j < arrayNumbers.Length; j++)
+            int currentNum = arrayNumbers[0];
+            int repeatingNumber = 1;
+            int maxNum = arrayNumbers[0];
+            int amountOfRepetitions = 1;
+
+
+            for (int i = 1; i < arrayNumbers.Length; i++)
+            {
+                if (arrayNumbers[i] == currentNum)
                 {
-                    Console.Write(arrayNumbers[j] + " ");
-                }
-
-                Console.WriteLine($"\n");
-                input = Console.ReadLine();
-
-                if (input == sumCommand)
-                {
-                    Console.WriteLine($"\nСумма всех введённых чисел: ");
-
-                    for (int j = 0; j < arrayNumbers.Length; j++)
-                    {
-                        sum += arrayNumbers[j];
-                    }
-
-                    Console.WriteLine($"\nРавна - {sum}");
-                    Console.ReadKey();
-                }
-                else if (input == exitCommand)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("Выход из программы.");
-                    Console.ReadKey();
-                    isWorking = false;
+                    repeatingNumber++;
                 }
                 else
                 {
-                    int[] tempArrayNumbers = new int[arrayNumbers.Length + 1];
-
-                    for (int i = 0; i < arrayNumbers.Length; i++)
+                    if (repeatingNumber > amountOfRepetitions)
                     {
-                        tempArrayNumbers[i] = arrayNumbers[i];
+                        amountOfRepetitions = repeatingNumber;
+                        maxNum = currentNum;
                     }
-
-                    tempArrayNumbers[arrayNumbers.Length] = int.Parse(input);
-                    arrayNumbers = tempArrayNumbers;
+                    currentNum = arrayNumbers[i];
+                    repeatingNumber = 1;
                 }
             }
+
+            Console.WriteLine("Массив: " + string.Join(", ", arrayNumbers));
+            Console.WriteLine("Число: " + maxNum);
+            Console.WriteLine("Количество повторений: " + repeatingNumber);
+            Console.ReadKey();
         }
     }
 }
