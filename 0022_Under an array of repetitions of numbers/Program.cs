@@ -29,7 +29,6 @@ namespace _0022_Under_an_array_of_repetitions_of_numbers
                 if (numbers[i] == numbers[i - 1])
                 {
                     currentRepeating++;
-
                 }
                 else
                 {
