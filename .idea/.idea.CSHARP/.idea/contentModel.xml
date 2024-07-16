@@ -324,6 +324,16 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
       </e>
+      <e p="0024_Split" t="IncludeRecursive">
+        <e p="0024_Split.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
       <e p="CSHARP.sln" t="IncludeFlat" />
       <e p="Junior" t="Include" />
       <e p="KnowledgeBase" t="Include" />
