@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace S_0019_parenthesis_expressions
+namespace _0026_parenthesis_expressions
 {
     internal class Program
     {
@@ -11,9 +11,9 @@ namespace S_0019_parenthesis_expressions
             string userInput = "";
             int symbolsCount = 0;
             int symbolsMaxDepth = 0;
-            bool hasBrackets =  false;
+            bool  hasBrackets = false;
 
-            Console.WriteLine("Программа позволит определить корректность и глубину строки:");
+            Console.WriteLine("Программа позволяет определить коректность и глубину строки:");
             userInput = Console.ReadLine();
 
             for (int i = 0; i < userInput.Length; i++)
@@ -23,9 +23,9 @@ namespace S_0019_parenthesis_expressions
                     symbolsCount++;
                     hasBrackets = true;
 
-                    if (symbolsCount > symbolsMaxDepth)
+                    if(symbolsCount > symbolsMaxDepth)
                     {
-                        symbolsMaxDepth = symbolsCount;
+                        symbolsMaxDepth = symbolsCount; 
                     }
                 }
                 else if (userInput[i] == secondSymbol)
