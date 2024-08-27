@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B263472-D5C7-44B1-880B-B610EC82DAD6}</ProjectGuid>
+    <ProjectGuid>{CC234590-D7C0-4B76-A5D0-308AFFDDC1AB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>T_17</RootNamespace>
-    <AssemblyName>T_17</AssemblyName>
+    <RootNamespace>_0011_Functions</RootNamespace>
+    <AssemblyName>0011_Functions</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

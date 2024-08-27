@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{01EE11D4-010D-4076-841F-623C5186C370}</ProjectGuid>
+    <ProjectGuid>{8890CE91-49CD-4EBD-BBA1-41722D0BAD30}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>T_18</RootNamespace>
-    <AssemblyName>T_18</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>_0012_ref___out</RootNamespace>
+    <AssemblyName>0012_ref &amp; out</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
