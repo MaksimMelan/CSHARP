@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 
+
 namespace _0015_Pac_Man
 {
     internal class Program
@@ -8,8 +9,18 @@ namespace _0015_Pac_Man
         static void Main(string[] args)
         {
             char[,] map = ReadMap("map.txt");
-            DrawMap(map);
-            Console.ReadKey();
+
+
+            while (true)
+            {
+                Console.Clear();
+                DrawMap(map);
+
+                Console.SetCursorPosition(1, 1);
+                Console.Write("@");
+
+                Thread.Sleep(1000)
+            }
         }
 
         private static char[,] ReadMap(string path)
