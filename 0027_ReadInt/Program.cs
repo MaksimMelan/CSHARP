@@ -6,25 +6,23 @@ namespace _0027_ReadInt
     {
         static void Main(string[] args)
         {
-            int number = ReadNumberFromConsole();
+            int number = ReadNumber();
             Console.WriteLine($"Вы ввели: {number}");
 
             Console.ReadKey();
         }
 
-        static int ReadNumberFromConsole()
+        static int ReadNumber()
         {
             int number;
-            string input;
-            bool success = false;
+            string input;           
 
             do
             {
                 Console.Write("Введите число:");
                 input = Console.ReadLine();
-
-                success = int.TryParse(input, out number);
-            }while(!success);
+            
+            }while(int.TryParse(input, out number) == false);
 
             return number;
         }
