@@ -29,7 +29,7 @@ namespace _0029_Kansas_City_shuffle
         {
             Random random = new Random();
 
-            for (int i = 0; i > caunts.Length;  i++)
+            for (int i = 0; i < caunts.Length;  i++)
             {
                 int j = random.Next(caunts.Length);
                 int temp = caunts[i];
