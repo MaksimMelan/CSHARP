@@ -94,16 +94,17 @@ namespace _0001_const
                 }
             }
             Console.ReadKey();
+        }
 
             /*
              * Начиная с С#10, интерполированные  строки могут быть константами, 
              * если все используемые выражения также являются константными строками.
              * Эта функция может улучшить код, создающий константные строки:
              */
-            const string Language = "C#";
-            const string Platform = ".NET";
-            const string Version = "10.0";
-            const string FullProductName = $"{Platform} - Language: {Language} Version: {Version}";
+            //const string Language = "C#";
+            //const string Platform = ".NET";
+            //const string Version = "10.0";
+            //const string FullProductName = $"{Platform} - Language: {Language} Version: {Version}";
 
             /*
              * Remarcks
