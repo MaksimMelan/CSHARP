@@ -8,56 +8,56 @@ namespace _0030_Personnel_accounting
         {
             bool isWork = true;
 
+            const string CommandAddDossier = "1";
+            const string CommandShowDossiers = "2";
+            const string CommandDeletingDossier = "3";
+            const string CommandSearchByLastName = "4";
+            const string CommandExit = "5";
+
             string[] employeeNames = { "Борисова Анна Федоровна", "Борисов Семен Семенович", "Пилевин Виктор аркадьевич", "Борисов Василий Семеонвич", "Борисов Семеон Василивич", };
             string[] employeePost = { "Инженер", "Доктор", "Учитель", "Дерижёр", "Вахтёр" };
+
             while (isWork)
             {
-                Console.WriteLine("Меню программы:");          
-                Console.WriteLine("1)добавить досье");        
-                Console.WriteLine("2)выввести досье");
-                Console.WriteLine("3)удалить досье");
-                Console.WriteLine("4)поиск по фамилии");
-                Console.WriteLine("5)выход");
+                Console.WriteLine("Меню программы:");
+                Console.WriteLine($"{CommandAddDossier}. добавить досье");
+                Console.WriteLine($"{CommandShowDossiers}. выввести досье");
+                Console.WriteLine($"{CommandDeletingDossier}. удалить досье");
+                Console.WriteLine($"{CommandSearchByLastName}. поиск по фамилии");
+                Console.WriteLine($"{CommandExit}. выход");
+
                 Console.WriteLine();
+
                 string userInput = Console.ReadLine();
-                
-                if (int.TryParse(userInput, out int number))
+
+                switch (userInput)
                 {
-                    switch (number)
-                    {
-                        case 1: //1)добавить досье,
-                            AddDossier(ref employeeNames, ref employeePost);
-                            break;
+                    case CommandAddDossier:
+                        AddDossier(ref employeeNames, ref employeePost);
+                        break;
 
-                        case 2: //2)выввести досье (в одну строчку через "-"ФИО и должность с порядковым номером в начале),
-                            ShowDossier(employeeNames, employeePost);
-                            Console.ReadKey();
-                            break;
+                    case CommandShowDossiers:
+                        ShowDossiers(employeeNames, employeePost);
+                        Console.ReadKey();
+                        break;
 
-                        case 3: 
-                            DeletingDossier(ref employeeNames, ref employeePost);
-                            Console.ReadKey();
-                            break;
+                    case CommandDeletingDossier:
+                        DeletingDossier(ref employeeNames, ref employeePost);
+                        Console.ReadKey();
+                        break;
 
-                        case 4: //4)поиск по фамилии ( показ всех с данной фамилией )
-                            SearchByLastName(ref employeeNames, ref employeePost);
-                            Console.ReadKey();
-                            break;
+                    case CommandSearchByLastName:
+                        SearchByLastName(ref employeeNames, ref employeePost);
+                        Console.ReadKey();
+                        break;
 
-                        case 5://5)выход
-                            isWork = !isWork;
-                            break;
+                    case CommandExit:
+                        isWork = !isWork;
+                        break;
 
-                        default:
-                            Console.WriteLine("Такого варианта нет!");
-                            break;
-                    }
-                }
-
-                else
-                {
-                    Console.WriteLine("Не верный ввод!");
-                    Console.ReadKey();
+                    default:
+                        Console.WriteLine("Такого варианта нет!");
+                        break;
                 }
 
                 Console.Clear();
@@ -65,88 +65,95 @@ namespace _0030_Personnel_accounting
 
             Console.WriteLine("Вы вышли из программы!");
             Console.ReadKey();
-        }       
+        }
 
         public static void AddDossier(ref string[] employeeNames, ref string[] employeePost)
         {
             Console.WriteLine("Введите ФИО:");
             string userInput = Console.ReadLine();
-            employeeNames = AddingArrayElement(userInput, employeeNames);
+            employeeNames = AddArrayElement(userInput, employeeNames);
 
             Console.WriteLine("Ввелдите должность:");
             userInput = Console.ReadLine();
-            employeePost = AddingArrayElement(userInput, employeePost);
+            employeePost = AddArrayElement(userInput, employeePost);
         }
-           
-        public static string[] AddingArrayElement(string inputString, string[] expandableArray)
+
+        public static string[] AddArrayElement(string inputString, string[] expandableArray)
         {
-            string[] newArray = new string[expandableArray.Length + 1];
+            string[] tempArray = new string[expandableArray.Length + 1];
 
             for (int i = 0; i < expandableArray.Length; i++)
             {
-                newArray[i] = expandableArray[i];
+                tempArray[i] = expandableArray[i];
             }
 
-            newArray[newArray.Length - 1] = inputString;
+            tempArray[tempArray.Length - 1] = inputString;
 
-
-            return newArray;
+            return tempArray;
         }
 
-        public static void ShowDossier(string[] employeeNames, string[] employeePost)
+        public static void ShowDossiers(string[] employeeNames, string[] employeePost)
         {
             Console.WriteLine();
 
             for (int i = 0; i < employeeNames.Length; i++)
             {
-                Console.WriteLine($"{i+1}. {employeeNames[i]} - {employeePost[i]}");
-            }    
+                Console.WriteLine($"{i + 1}. {employeeNames[i]} - {employeePost[i]}");
+            }
         }
 
-        public static void DeletingDossier (ref string[] employeeNames, ref string[] employeePost)
+        public static void DeletingDossier(ref string[] employeeNames, ref string[] employeePost)
         {
-            string[] tempEmployeeNames = new string[employeeNames.Length -1 ];
-            string[] tempEmployeePost = new string[employeePost.Length - 1];
-
-            ShowDossier(employeeNames, employeePost);
+            ShowDossiers(employeeNames, employeePost);
 
             Console.WriteLine("Введите номер досье, которое хотите удалить: ");
             string userInput = Console.ReadLine();
 
-            if (int.TryParse(userInput, out int userLessIndexArray))
+            if (int.TryParse(userInput, out int userLessIndexArray) && userLessIndexArray <= employeeNames.Length)
             {
-                for (int i = 0; i < userLessIndexArray - 1; i++)
-                {
-                    tempEmployeeNames[i] = employeeNames[i];
-                    tempEmployeePost[i] = employeePost[i];
-                }
-
-                for (int i = userLessIndexArray; i < employeePost.Length; i++)  
-                {
-                    tempEmployeeNames[i - 1] = employeeNames[i];
-                    tempEmployeePost[i - 1] = employeePost[i];
-                }
+                employeeNames = DeletingPosition(userLessIndexArray, employeeNames);
+                employeePost = DeletingPosition(userLessIndexArray, employeePost);
             }
-
-            employeeNames = tempEmployeeNames;
-            employeePost = tempEmployeePost;
+            else
+            {
+                Console.WriteLine("Такого досье не существует!");
+            }
 
             Console.WriteLine();
             Console.WriteLine($"Список после удаления досье номер {userLessIndexArray}");
 
-            ShowDossier(employeeNames, employeePost);
+            ShowDossiers(employeeNames, employeePost);
         }
 
-        public static void SearchByLastName (ref string[] employeeNames, ref string[] employeePost)
+        public static string[] DeletingPosition(int userLessIndexArray, string[] massiv)
         {
-              
+            string[] tempMassiv = new string[massiv.Length - 1];
+
+            for (int i = 0; i < userLessIndexArray - 1; i++)
+            {
+                tempMassiv[i] = massiv[i];
+            }
+
+            for (int i = userLessIndexArray; i < massiv.Length; i++)
+            {
+                tempMassiv[i - 1] = massiv[i];
+            }
+
+            massiv = tempMassiv;
+
+            return massiv;
+        }
+        public static void SearchByLastName(ref string[] employeeNames, ref string[] employeePost)
+        {
+            bool foundLastName = false;
+
             Console.WriteLine("Введите фамилию:");
 
             string userInput = Console.ReadLine();
 
             Console.WriteLine("Вот список совпадений:");
 
-            for (int i = 0;i < employeeNames.Length; i++)
+            for (int i = 0; i < employeeNames.Length; i++)
             {
                 string fullName = employeeNames[i];
 
@@ -158,12 +165,18 @@ namespace _0030_Personnel_accounting
                     if (splitName[j] == userInput)
                     {
                         Console.WriteLine($"{i + 1}. {employeeNames[i]} - {employeePost[i]}");
+                        foundLastName = true;
                     }
                     else
                     {
                         continue;
                     }
-                }               
+                }
+            }
+
+            if (foundLastName == false)
+            {
+                Console.WriteLine("Такой фамилии не существует!");
             }
         }
     }
