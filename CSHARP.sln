@@ -157,6 +157,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0029_Kansas City shuffle", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0029_Kansas_City_shuffle_02", "0029_Kansas_City_shuffle_02\0029_Kansas_City_shuffle_02.csproj", "{CE3B57AF-2CE3-46F6-97F1-3285CDD8E870}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0030_Personnel accounting", "0030_Personnel accounting\0030_Personnel accounting.csproj", "{81DC69F1-601B-4BCB-BF4F-58FAB30F7F1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -455,6 +457,10 @@ Global
 		{CE3B57AF-2CE3-46F6-97F1-3285CDD8E870}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE3B57AF-2CE3-46F6-97F1-3285CDD8E870}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE3B57AF-2CE3-46F6-97F1-3285CDD8E870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DC69F1-601B-4BCB-BF4F-58FAB30F7F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DC69F1-601B-4BCB-BF4F-58FAB30F7F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DC69F1-601B-4BCB-BF4F-58FAB30F7F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DC69F1-601B-4BCB-BF4F-58FAB30F7F1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -533,6 +539,7 @@ Global
 		{90E54A28-281D-4AF1-957D-8B3D1D65A058} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 		{DA7BE253-4898-4D85-8E6F-EB47B66A7F55} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 		{CE3B57AF-2CE3-46F6-97F1-3285CDD8E870} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
+		{81DC69F1-601B-4BCB-BF4F-58FAB30F7F1E} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B098DCA-6170-4FC3-9DC2-5D85A6973C0C}
