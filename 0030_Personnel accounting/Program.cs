@@ -167,6 +167,7 @@ namespace _0030_Personnel_accounting
                         Console.WriteLine($"{i + 1}. {employeeNames[i]} - {employeePost[i]}");
                         foundLastName = true;
                     }
+                }
             }
 
             if (foundLastName == false)
