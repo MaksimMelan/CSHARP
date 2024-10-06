@@ -125,23 +125,23 @@ namespace _0030_Personnel_accounting
             ShowDossiers(employeeNames, employeePost);
         }
 
-        public static string[] DeletingPosition(int userLessIndexArray, string[] massiv)
+        public static string[] DeletingPosition(int userLessIndexArray, string[] array)
         {
-            string[] tempMassiv = new string[massiv.Length - 1];
+            string[] tempArray = new string[array.Length - 1];
 
             for (int i = 0; i < userLessIndexArray - 1; i++)
             {
-                tempMassiv[i] = massiv[i];
+                tempArray[i] = array[i];
             }
 
-            for (int i = userLessIndexArray; i < massiv.Length; i++)
+            for (int i = userLessIndexArray; i < array.Length; i++)
             {
-                tempMassiv[i - 1] = massiv[i];
+                tempArray[i - 1] = array[i];
             }
 
-            massiv = tempMassiv;
+            array = tempArray;
 
-            return massiv;
+            return array;
         }
         public static void SearchByLastName(ref string[] employeeNames, ref string[] employeePost)
         {
@@ -167,11 +167,6 @@ namespace _0030_Personnel_accounting
                         Console.WriteLine($"{i + 1}. {employeeNames[i]} - {employeePost[i]}");
                         foundLastName = true;
                     }
-                    else
-                    {
-                        continue;
-                    }
-                }
             }
 
             if (foundLastName == false)
