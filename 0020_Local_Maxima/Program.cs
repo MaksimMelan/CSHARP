@@ -8,55 +8,45 @@ namespace _0020_Local_Maxima
     {
         static void Main(string[] args)
         {
-            Random random = new Random();
+            Random rand = new Random();
 
-            int numberOfColumns = 15;
+            int numberOfColumns = 30;
+            int[] numbers = new int[numberOfColumns];
 
-            int minNumberRandomness = -100;
-            int maxNumberRandomness = 100;
+            int position = 10;
 
-            int[] arrayNumbers = new int[numberOfColumns];
+            string messageLocalMaxima = "\nВывод номера индекса и через дробь(/) его локального максимума: ";
 
-            int indentationForDataOutput = 10;
-
-            int localMaxima = 0;
-
-            string messageLocalMaxima = "\nВывод номера индекса и черз дробь(/) его локального максимума: ";
-
-            Console.SetCursorPosition(indentationForDataOutput, Console.CursorTop);
-            Console.WriteLine($"Создан массив\n");
-
-            for (int i = 0; i < numberOfColumns; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                arrayNumbers[i] = random.Next(minNumberRandomness, maxNumberRandomness);
-
-                Console.WriteLine($"№{i +1 } {arrayNumbers[i]}  ");
-            }
-
-            Console.Write($"\n{messageLocalMaxima}\n\n");
-
-            if (arrayNumbers[0] > arrayNumbers[1])
-            {
-                Console.WriteLine($"1/{arrayNumbers[0]}".PadLeft(indentationForDataOutput));
-            }
-
-            for (int i = 1; i < arrayNumbers.Length - 1; i++)
-            {
-                if (arrayNumbers[i] > arrayNumbers[i - 1] && arrayNumbers[i] > arrayNumbers[i + 1])
-                {
-                    Console.WriteLine($"{i + 1}/{arrayNumbers[i]}".PadLeft(indentationForDataOutput));
-                }
-            }
-
-            int indexOfLastElement = arrayNumbers.Length - 1;
-
-            if (arrayNumbers[arrayNumbers.Length - 1] > arrayNumbers[indexOfLastElement - 1])
-            {
-                indexOfLastElement = arrayNumbers[arrayNumbers.Length - 1];
-                Console.WriteLine($"{arrayNumbers.Length}/{arrayNumbers[arrayNumbers.Length - 1]}".PadLeft(indentationForDataOutput));
+                numbers[i] = rand.Next(1, 9);
+                Console.Write(numbers[i] + " ");
             }
 
             Console.WriteLine();
+            Console.WriteLine(messageLocalMaxima);
+            Console.WriteLine();
+
+            if (numbers[0] > numbers[1])
+            {
+                Console.WriteLine($"1/{numbers[0]}".PadLeft(position));
+            }
+
+            for (int i = 1; i < numbers.Length - 1; i++)
+            {
+                if (numbers[i] > numbers[i - 1] && numbers[i] > numbers[i + 1])
+                {
+                    Console.WriteLine($"{i + 1} / {numbers[i]}".PadLeft(position));
+                }
+            }
+
+            int lastIndex = numbers.Length - 1;
+
+            if (numbers[lastIndex] > numbers[lastIndex - 1])
+            {
+                Console.WriteLine($"{numbers.Length} / {numbers[lastIndex]}".PadLeft(position));
+            }
+
             Console.ReadKey();
         }
     }

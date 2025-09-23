@@ -4,6 +4,16 @@
     <e p="C:\Users\maksi\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
     <e p="C:\Users\maksi\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_CSHARP.1458552734.00" t="ExcludeRecursive" />
     <e p="C:\Users\maksi\Documents\#Projects\DevelopmentSchool\CSHARP" t="IncludeFlat">
+      <e p="0000_Empty" t="IncludeRecursive">
+        <e p="0000_Empty.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
       <e p="0001_const" t="IncludeRecursive">
         <e p="0001_const.csproj" t="IncludeRecursive" />
         <e p="App.config" t="Include" />
@@ -204,6 +214,16 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
       </e>
+      <e p="0011_Functions" t="IncludeRecursive">
+        <e p="0011_Functions.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
       <e p="0012_CurrencyConverter" t="IncludeRecursive">
         <e p="0012_CurrencyConverter.csproj" t="IncludeRecursive" />
         <e p="App.config" t="Include" />
@@ -214,8 +234,38 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
       </e>
+      <e p="0012_ref &amp; out" t="IncludeRecursive">
+        <e p="0012_ref &amp; out.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
       <e p="0013_NameOutput" t="IncludeRecursive">
         <e p="0013_NameOutput.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="0013_Overloads" t="IncludeRecursive">
+        <e p="0013_Overloads.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="0014_Health Bar" t="IncludeRecursive">
+        <e p="0014_Health Bar.csproj" t="IncludeRecursive" />
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
@@ -236,6 +286,16 @@
       </e>
       <e p="0015_MultiplesOfNumbers" t="IncludeRecursive">
         <e p="0015_MultiplesOfNumbers.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="0015_Pac-Man" t="IncludeRecursive">
+        <e p="0015_Pac-Man.csproj" t="IncludeRecursive" />
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
@@ -326,6 +386,76 @@
       </e>
       <e p="0024_Split" t="IncludeRecursive">
         <e p="0024_Split.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="0025_Shifting array values" t="IncludeRecursive">
+        <e p="0025_Shifting array values.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="0026_parenthesis_expressions" t="IncludeRecursive">
+        <e p="0026_parenthesis_expressions.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="0027_ReadInt" t="IncludeRecursive">
+        <e p="0027_ReadInt.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="0028_UIElement" t="IncludeRecursive">
+        <e p="0028_UIElement.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="0029_Kansas City shuffle" t="IncludeRecursive">
+        <e p="0029_Kansas City shuffle.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="0029_Kansas_City_shuffle_02" t="IncludeRecursive">
+        <e p="0029_Kansas_City_shuffle_02.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="0030_Personnel accounting" t="IncludeRecursive">
+        <e p="0030_Personnel accounting.csproj" t="IncludeRecursive" />
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
@@ -530,46 +660,6 @@
         </e>
         <e p="T_011.csproj" t="IncludeRecursive" />
       </e>
-      <e p="T_15" t="IncludeRecursive">
-        <e p="App.config" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="Program.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-        <e p="T_015.csproj" t="IncludeRecursive" />
-      </e>
-      <e p="T_16" t="IncludeRecursive">
-        <e p="App.config" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="Program.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-        <e p="T_016.csproj" t="IncludeRecursive" />
-      </e>
-      <e p="T_17" t="IncludeRecursive">
-        <e p="App.config" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="Program.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-        <e p="T_017.csproj" t="IncludeRecursive" />
-      </e>
-      <e p="T_18" t="IncludeRecursive">
-        <e p="App.config" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="Program.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-        <e p="T_018.csproj" t="IncludeRecursive" />
-      </e>
       <e p="T_6" t="IncludeRecursive">
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
@@ -660,7 +750,6 @@
         </e>
         <e p="T_008_DZ_03.csproj" t="IncludeRecursive" />
       </e>
-      <e p="Условные операторы и циклы" t="Include" />
     </e>
   </component>
 </project>
