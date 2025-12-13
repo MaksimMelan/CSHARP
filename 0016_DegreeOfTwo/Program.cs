@@ -23,7 +23,7 @@ namespace _0016_DegreeOfTwo
                 degreeValue++;             
             }
 
-            Console.WriteLine($"Минимальную степень - {degree} , превосходящую заданное число - {randomNumber}," +
+            Console.WriteLine($"Минимальную степень - {degree} ,\n превосходящую заданное число - {randomNumber},\n" +
                 $" равна - {degreeValue},\nСамо число в найденой степени - {minimumSuperiorNumber}");
             Console.ReadKey();
         }

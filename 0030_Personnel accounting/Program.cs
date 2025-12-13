@@ -38,17 +38,16 @@ namespace _0030_Personnel_accounting
 
                     case CommandShowDossiers:
                         ShowDossiers(employeeNames, employeePost);
-                        Console.ReadKey();
                         break;
 
                     case CommandDeletingDossier:
                         DeletingDossier(ref employeeNames, ref employeePost);
-                        Console.ReadKey();
+                        
                         break;
 
                     case CommandSearchByLastName:
                         SearchByLastName(ref employeeNames, ref employeePost);
-                        Console.ReadKey();
+                        
                         break;
 
                     case CommandExit:
@@ -59,7 +58,7 @@ namespace _0030_Personnel_accounting
                         Console.WriteLine("Такого варианта нет!");
                         break;
                 }
-
+                Console.ReadKey();
                 Console.Clear();
             }
 
@@ -143,6 +142,7 @@ namespace _0030_Personnel_accounting
 
             return array;
         }
+
         public static void SearchByLastName(ref string[] employeeNames, ref string[] employeePost)
         {
             bool foundLastName = false;

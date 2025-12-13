@@ -159,6 +159,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0029_Kansas_City_shuffle_02
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0030_Personnel accounting", "0030_Personnel accounting\0030_Personnel accounting.csproj", "{81DC69F1-601B-4BCB-BF4F-58FAB30F7F1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0031_Brave_new_world", "0031_Brave_new_world\0031_Brave_new_world.csproj", "{CCA86DD1-61DC-4403-A1E9-E14F78B1E0A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -461,6 +463,10 @@ Global
 		{81DC69F1-601B-4BCB-BF4F-58FAB30F7F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DC69F1-601B-4BCB-BF4F-58FAB30F7F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81DC69F1-601B-4BCB-BF4F-58FAB30F7F1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA86DD1-61DC-4403-A1E9-E14F78B1E0A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA86DD1-61DC-4403-A1E9-E14F78B1E0A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA86DD1-61DC-4403-A1E9-E14F78B1E0A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA86DD1-61DC-4403-A1E9-E14F78B1E0A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -540,6 +546,7 @@ Global
 		{DA7BE253-4898-4D85-8E6F-EB47B66A7F55} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 		{CE3B57AF-2CE3-46F6-97F1-3285CDD8E870} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 		{81DC69F1-601B-4BCB-BF4F-58FAB30F7F1E} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
+		{CCA86DD1-61DC-4403-A1E9-E14F78B1E0A5} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B098DCA-6170-4FC3-9DC2-5D85A6973C0C}

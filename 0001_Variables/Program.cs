@@ -25,6 +25,7 @@ namespace _0001_Variables
             long astronomicalUnits = 85324875023485;
 
             bool isUsedFireball = false;
+            
         }
     }
 }

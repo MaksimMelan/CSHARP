@@ -11,7 +11,7 @@ namespace _0026_parenthesis_expressions
             string userInput = "";
             int symbolsCount = 0;
             int symbolsMaxDepth = 0;
-            bool  hasBrackets = false;
+            bool hasBrackets = false;
 
             Console.WriteLine("Программа позволяет определить коректность и глубину строки:");
             userInput = Console.ReadLine();
@@ -23,9 +23,9 @@ namespace _0026_parenthesis_expressions
                     symbolsCount++;
                     hasBrackets = true;
 
-                    if(symbolsCount > symbolsMaxDepth)
+                    if (symbolsCount > symbolsMaxDepth)
                     {
-                        symbolsMaxDepth = symbolsCount; 
+                        symbolsMaxDepth = symbolsCount;
                     }
                 }
                 else if (userInput[i] == secondSymbol)
