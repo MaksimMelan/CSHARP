@@ -32,8 +32,6 @@ namespace _0031_Brave_new_world
 
                 HandleInput(pressedKey, ref pacmanX, ref pacmanY, map);
             }
-
-            Console.ReadKey();
         }
 
         private static char[,] ReadMap(string path)
