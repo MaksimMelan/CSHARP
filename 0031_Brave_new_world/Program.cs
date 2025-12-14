@@ -1,5 +1,4 @@
-﻿using System;  
-using System.IO;
+﻿
 
 namespace _0031_Brave_new_world
 {
@@ -50,12 +49,24 @@ namespace _0031_Brave_new_world
 
                     Console.ReadKey();
                 }
-                    
 
-                GetMovingUnit(pressedKey, ref pacmanX, ref pacmanY, map, ref  moveUpKeys, ref  moveDownKeys, ref  moveLeftKeys, ref  moveRightKeys);
+                int[] direction =  GetDirection(pressedKey, ref pacmanX, ref pacmanY, map);
 
-
+                if(CanMove(direction, pacmanX, pacmanY, map))
+                {
+                    pacmanX += direction[0];
+                    pacmanY += direction[1];
+                }
             }
+        }
+
+        private static bool CanMove(int[] direction, int pacmanX, int pacmanY, char[,] map)
+        {
+            int nextPacmanPositionX = pacmanX + direction[0];
+            int nextPacmanPositionY = pacmanY + direction[1];
+
+            return map[nextPacmanPositionX, nextPacmanPositionY] != '#';
+
         }
 
         private static char[,] ReadMap(string path)
@@ -84,22 +95,13 @@ namespace _0031_Brave_new_world
             }
         }
 
-        private static void GetMovingUnit(ConsoleKeyInfo pressedKey, ref int pacmanX, ref int pacmanY, char[,] map, ref ConsoleKey moveUpKeys, ref ConsoleKey moveDownKeys, ref ConsoleKey moveLeftKeys, ref ConsoleKey moveRightKeys)
+        private static int[] GetDirection(ConsoleKeyInfo pressedKey, ref int pacmanX, ref int pacmanY, char[,] map)
         {
-            int[] direction = GetDirection(pressedKey, ref  moveUpKeys, ref moveDownKeys, ref  moveLeftKeys, ref  moveRightKeys);
+            ConsoleKey moveUpKeys = ConsoleKey.UpArrow;
+            ConsoleKey moveDownKeys = ConsoleKey.DownArrow;
+            ConsoleKey moveLeftKeys = ConsoleKey.LeftArrow;
+            ConsoleKey moveRightKeys = ConsoleKey.RightArrow;
 
-            int nextPacmanPositionX = pacmanX + direction[0];
-            int nextPacmanPositionY = pacmanY + direction[1];
-
-            if (map[nextPacmanPositionX, nextPacmanPositionY] ==  ' ')
-            {
-                pacmanX = nextPacmanPositionX;
-                pacmanY = nextPacmanPositionY;
-            }
-        }
-
-        private static int[] GetDirection(ConsoleKeyInfo pressedKey, ref ConsoleKey moveUpKeys, ref ConsoleKey moveDownKeys, ref ConsoleKey moveLeftKeys, ref ConsoleKey moveRightKeys)
-        {
             int[] direction = {0, 0};
 
             if (pressedKey.Key == moveUpKeys)
@@ -111,7 +113,7 @@ namespace _0031_Brave_new_world
             else if (pressedKey.Key == moveRightKeys)
                 direction[0] += 1;
 
-            return direction;
+           return direction;
         }
 
         private static int GetMaxLengthOfLine(string[] lines)
