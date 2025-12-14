@@ -1,5 +1,6 @@
 ﻿using System;  
 using System.IO;
+using System.Reflection.Metadata;
 
 namespace _0031_Brave_new_world
 {
@@ -7,14 +8,25 @@ namespace _0031_Brave_new_world
     {
         static void Main(string[] args)
         {
+            ConsoleKey exitKey = ConsoleKey.Escape;
 
-            char[,] map = ReadMap("map.txt");
+            ConsoleKey moveUpKeys = ConsoleKey.UpArrow;
+            ConsoleKey moveDownKeys = ConsoleKey.DownArrow;
+            ConsoleKey moveLeftKeys = ConsoleKey.LeftArrow;
+            ConsoleKey moveRightKeys = ConsoleKey.RightArrow;
+
+            bool isWork = true;
+
+            string mesageExit = "Выход - нажмите любую клавишу!";
+            string mapFileName = "map.txt";
+
+            char[,] map = ReadMap(mapFileName);
             ConsoleKeyInfo pressedKey = new ConsoleKeyInfo('W', ConsoleKey.W, false, false, false);
 
             int pacmanX = 1;
             int pacmanY = 1;
 
-            while (true)
+            while (isWork)
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Blue;
@@ -30,15 +42,28 @@ namespace _0031_Brave_new_world
 
                 pressedKey = Console.ReadKey();
 
-                HandleInput(pressedKey, ref pacmanX, ref pacmanY, map);
+                if (pressedKey.Key == exitKey)
+                {
+                    isWork = false;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.SetCursorPosition(5, 4);
+                    Console.WriteLine(mesageExit);
+
+                    Console.ReadKey();
+                }
+                    
+
+                GetMovingUnit(pressedKey, ref pacmanX, ref pacmanY, map, ref  moveUpKeys, ref  moveDownKeys, ref  moveLeftKeys, ref  moveRightKeys);
+
+
             }
         }
 
         private static char[,] ReadMap(string path)
         {
-            string[] file = File.ReadAllLines("map.txt");
+            string[] file = File.ReadAllLines(path);
 
-            char[,] map = new char[GetMaxLengthOfLine(file), file.Length]; // x - с лева на право (строка); y - столбик ( с верху в низ )
+            char[,] map = new char[GetMaxLengthOfLine(file), file.Length]; 
             
             for(int x = 0; x < map.GetLength(0); x++) 
                 for(int y = 0; y < map.GetLength(1); y++)
@@ -60,9 +85,9 @@ namespace _0031_Brave_new_world
             }
         }
 
-        private static void HandleInput(ConsoleKeyInfo pressedKey, ref int pacmanX, ref int pacmanY, char[,] map)
+        private static void GetMovingUnit(ConsoleKeyInfo pressedKey, ref int pacmanX, ref int pacmanY, char[,] map, ref ConsoleKey moveUpKeys, ref ConsoleKey moveDownKeys, ref ConsoleKey moveLeftKeys, ref ConsoleKey moveRightKeys)
         {
-            int[] direction = GetDirection(pressedKey);
+            int[] direction = GetDirection(pressedKey, ref  moveUpKeys, ref moveDownKeys, ref  moveLeftKeys, ref  moveRightKeys);
 
             int nextPacmanPositionX = pacmanX + direction[0];
             int nextPacmanPositionY = pacmanY + direction[1];
@@ -74,17 +99,17 @@ namespace _0031_Brave_new_world
             }
         }
 
-        private static int[] GetDirection(ConsoleKeyInfo pressedKey)
+        private static int[] GetDirection(ConsoleKeyInfo pressedKey, ref ConsoleKey moveUpKeys, ref ConsoleKey moveDownKeys, ref ConsoleKey moveLeftKeys, ref ConsoleKey moveRightKeys)
         {
             int[] direction = {0, 0};
 
-            if (pressedKey.Key == ConsoleKey.UpArrow)
+            if (pressedKey.Key == moveUpKeys)
                 direction[1] -= 1;
-            else if (pressedKey.Key == ConsoleKey.DownArrow)
+            else if (pressedKey.Key == moveDownKeys)
                 direction[1] += 1;
-            else if (pressedKey.Key == ConsoleKey.LeftArrow)
+            else if (pressedKey.Key == moveLeftKeys)
                 direction[0] -= 1;
-            else if (pressedKey.Key == ConsoleKey.RightArrow)
+            else if (pressedKey.Key == moveRightKeys)
                 direction[0] += 1;
 
             return direction;
