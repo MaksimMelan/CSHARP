@@ -66,7 +66,6 @@ namespace _0031_Brave_new_world
             int nextPacmanPositionY = pacmanY + direction[1];
 
             return map[nextPacmanPositionX, nextPacmanPositionY] != '#';
-
         }
 
         private static char[,] ReadMap(string path)
