@@ -50,7 +50,7 @@ namespace _0031_Brave_new_world
                     Console.ReadKey();
                 }
 
-                int[] direction =  GetDirection(pressedKey, ref pacmanX, ref pacmanY, map);
+                int[] direction =  GetDirection(pressedKey, ref pacmanX, ref pacmanY);
 
                 if(CanMove(direction, pacmanX, pacmanY, map))
                 {
@@ -94,7 +94,7 @@ namespace _0031_Brave_new_world
             }
         }
 
-        private static int[] GetDirection(ConsoleKeyInfo pressedKey, ref int pacmanX, ref int pacmanY, char[,] map)
+        private static int[] GetDirection(ConsoleKeyInfo pressedKey, ref int pacmanX, ref int pacmanY)
         {
             ConsoleKey moveUpKeys = ConsoleKey.UpArrow;
             ConsoleKey moveDownKeys = ConsoleKey.DownArrow;
