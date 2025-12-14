@@ -1,6 +1,5 @@
 ﻿using System;  
 using System.IO;
-using System.Reflection.Metadata;
 
 namespace _0031_Brave_new_world
 {
@@ -40,7 +39,7 @@ namespace _0031_Brave_new_world
                 Console.SetCursorPosition(38, 0);
                 Console.Write(pressedKey.KeyChar);
 
-                pressedKey = Console.ReadKey();
+                pressedKey = Console.ReadKey(true);
 
                 if (pressedKey.Key == exitKey)
                 {
