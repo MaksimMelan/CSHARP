@@ -29,6 +29,10 @@ namespace _0033_L_Stack
                 Console.WriteLine("Следующее число в стеке: " + numbers.Pop());
             }
 
+            foreach (var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
 
             Console.ReadKey();
         }
