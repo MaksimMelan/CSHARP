@@ -34,7 +34,6 @@ namespace _0035_HA_Explanatory_Dictionary
                     isWork = false;
 
                 }
-
                 else if (input == FindWordComand)
                 {
                     FindWord(countriesCapitals);
@@ -44,11 +43,11 @@ namespace _0035_HA_Explanatory_Dictionary
                     Console.WriteLine("\nНеверная команда!");
                     continue;
                 }
-
                 Console.ReadKey();
             }
         }
         static void FindWord(Dictionary<string, string> dictionary)
+
         {
             Console.WriteLine("\nВведите страну");
 
@@ -65,6 +64,7 @@ namespace _0035_HA_Explanatory_Dictionary
             }
         }
         static void ShowMenu(string findCmd, string exitCmd)
+
         {
             Console.WriteLine();
             Console.WriteLine($"{findCmd} - поиск столицы.");
