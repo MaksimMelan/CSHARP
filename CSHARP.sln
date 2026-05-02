@@ -171,6 +171,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0034_L_Dictionary", "0034_L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0035_HA_Explanatory Dictionary", "0035_HA_Explanatory Dictionary\0035_HA_Explanatory Dictionary.csproj", "{5061EB66-0C78-4F18-8E08-4FC122AE9BBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0036_HA_Queue at the store", "0036_HA_Queue at the store\0036_HA_Queue at the store.csproj", "{3BEA398A-6B0F-466C-B3E3-3B57B53E885E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -497,6 +499,10 @@ Global
 		{5061EB66-0C78-4F18-8E08-4FC122AE9BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5061EB66-0C78-4F18-8E08-4FC122AE9BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5061EB66-0C78-4F18-8E08-4FC122AE9BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BEA398A-6B0F-466C-B3E3-3B57B53E885E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BEA398A-6B0F-466C-B3E3-3B57B53E885E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BEA398A-6B0F-466C-B3E3-3B57B53E885E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BEA398A-6B0F-466C-B3E3-3B57B53E885E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -582,6 +588,7 @@ Global
 		{859D18B4-840E-4B11-B4F6-570A1DAB31B3} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 		{D74780CF-0DC3-451E-A9F9-0D714832E897} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 		{5061EB66-0C78-4F18-8E08-4FC122AE9BBA} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
+		{3BEA398A-6B0F-466C-B3E3-3B57B53E885E} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B098DCA-6170-4FC3-9DC2-5D85A6973C0C}
