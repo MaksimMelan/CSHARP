@@ -7,7 +7,6 @@ namespace _0037_HA_Dynamic_array_advanced
     {
         static void Main(string[] args)
         {
-            const string AddCommand = "add";
             const string SumCommand = "sum";
             const string ExitCommand = "exit";
 
@@ -19,53 +18,43 @@ namespace _0037_HA_Dynamic_array_advanced
             {
                 Console.Clear();
 
-                Console.WriteLine($"{AddCommand} - добавить число.");
+                Console.WriteLine($"Введите число.");
                 Console.WriteLine($"{SumCommand} - вывести сумму.");
-                Console.WriteLine($"{ExitCommand} - выход.");
-
+                Console.WriteLine($"{ExitCommand} - выход.\n");
+                Console.WriteLine($"Сумма числа: {sum}");
+                Console.WriteLine();
                 OutputListNumbers(numbers);
+                Console.WriteLine();
 
-                Console.WriteLine("Введите команду: \n");
                 string userInput = Console.ReadLine();
 
-                switch (userInput)
+                if (userInput == ExitCommand)
                 {
-                    case AddCommand:
-                        AddNumber(numbers);
-                        break;
-
-                    case SumCommand:
-                        sum = SumList(numbers);
-                        Console.WriteLine($"Сумма чисел: {sum}");
-                        Console.ReadKey();
-                        break;
-
-                    case ExitCommand:
-                        Console.WriteLine("Нажмите любую клавишу и программа закроется");
-                        Console.ReadKey();
-                        isWork = false;
-                        break;
-
-                    default:
-                        Console.WriteLine("Вы ввели неизвестную команду");
-                        break;
+                    Console.WriteLine("Нажмите любую клавишу и программа закроется");
+                    Console.ReadKey();
+                    isWork = false;
                 }
+
+                if (userInput == SumCommand)
+                {
+                    sum = SumList(numbers);
+                    Console.WriteLine($"Сумма чисел: {sum}");
+                    Console.WriteLine("Для продолжения нажмите любую клвишу.");
+                    Console.ReadKey();
+                    continue;
+                }
+
+                if(int.TryParse(userInput, out int number) == true)
+                {
+                    numbers.Add(number);
+                }
+                else
+                {
+                    Console.WriteLine("Вы ввели неизвестную команду");
+                    Console.WriteLine("Для продолжения нажмите любую клвишу.");
+                    Console.ReadKey();
+                }                
             }
-        }
-
-        private static void AddNumber(List<int> numbers)
-        {
-            string userInput;
-            int number;
-            do
-            {
-                Console.WriteLine("Введите число");
-                userInput = Console.ReadLine();
-
-            }
-            while (int.TryParse(userInput, out number) == false);
-
-            numbers.Add(number);
         }
 
         private static int SumList(List<int> numbers)
