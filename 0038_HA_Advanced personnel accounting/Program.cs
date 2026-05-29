@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace _0000_Empty
+namespace _0038_HA_Advanced_personnel_accounting
 {
     internal class Program
     {
@@ -24,8 +24,7 @@ namespace _0000_Empty
                 ["Менеджер"] = new List<string> { "Фёдорова Мария Алексеевна" },
                 ["Системный администратор"] = new List<string> { "Григорьев Артём Васильевич", "Белова Татьяна Николаевна" },
                 ["Аналитик"] = new List<string> { "Зайцев Николай Петрович" }
-            }
-            ;
+            };
 
             while (isWork)
             {
@@ -112,7 +111,6 @@ namespace _0000_Empty
                 Console.WriteLine($"На должности {position} больше нет сотрудников, эта должность удаляется.");
                 Console.WriteLine($"Нажмите любую клавишу для продолжения.");
                 dictionary.Remove(position);
-                Console.ReadKey();
             }
 
             Console.WriteLine($"Нажмите любую клавишу для продолжения.");
