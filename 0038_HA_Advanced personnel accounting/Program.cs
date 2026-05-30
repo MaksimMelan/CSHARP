@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-
 namespace _0038_HA_Advanced_personnel_accounting
 {
     internal class Program
@@ -99,7 +98,6 @@ namespace _0038_HA_Advanced_personnel_accounting
                 return;
             }
 
-
             List<string> staffList = new List<string>();
 
             foreach (var staff in dictionary.Keys)
@@ -136,7 +134,6 @@ namespace _0038_HA_Advanced_personnel_accounting
             string deleteName = fullNames[index];
             fullNames.RemoveAt(index);
             Console.WriteLine($"Employee {fullNamesNumber} - {deleteName} removed from the list and from position {staffKey}.");
-
 
             if (dictionary[staffKey].Count == 0)
             {
