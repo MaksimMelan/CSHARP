@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+
 
 namespace _0038_HA_Advanced_personnel_accounting
 {
@@ -10,31 +12,31 @@ namespace _0038_HA_Advanced_personnel_accounting
             const string CommandAddDossier = "1";
             const string CommandDeleteDossier = "2";
             const string CommandOutputDossier = "3";
-            const string CommandExite = "4";
+            const string CommandExit = "4";
 
-            string finalExitMessage = "После нажатия любой кнопки программа закроется!";
+            string finalExitMessage = "After pressing any button the program will close!";
 
             bool isWork = true;
 
             Dictionary<string, List<string>> positionStaff = new Dictionary<string, List<string>>()
             {
-                ["Программист"] = new List<string> { "Иванов Иван Иванович" },
-                ["Дизайнер"] = new List<string> { "Петрова Анна Сергеевна", "Смирнов Олег Викторович" },
-                ["Тестировщик"] = new List<string> { "Козлов Дмитрий Андреевич", "Морозова Елена Игоревна", "Соколов Павел Романович" },
-                ["Менеджер"] = new List<string> { "Фёдорова Мария Алексеевна" },
-                ["Системный администратор"] = new List<string> { "Григорьев Артём Васильевич", "Белова Татьяна Николаевна" },
-                ["Аналитик"] = new List<string> { "Зайцев Николай Петрович" }
+                ["Programmer"] = new List<string> { "Ivanov Ivan Ivanovich" },
+                ["Designer"] = new List<string> { "Petrova Anna Sergeevna", "Smirnov Oleg Viktorovich" },
+                ["QA"] = new List<string> { "Kozlov Dmitry Andreevich", "Morozova Elena Igorevna", "Sokolov Pavel Romanovich" },
+                ["Manager"] = new List<string> { "Fedorova Maria Alekseevna" },
+                ["System administrator"] = new List<string> { "Grigoriev Artyom Vasilievich", "Belova Tatyana Nikolaevna" },
+                ["Analyst"] = new List<string> { "Zaitsev Nikolai Petrovich" }
             };
 
             while (isWork)
             {
                 Console.Clear();
-                Console.WriteLine($"{CommandAddDossier} - Добавить досье.");
-                Console.WriteLine($"{CommandDeleteDossier} - Удалить досье");
-                Console.WriteLine($"{CommandOutputDossier} - Вывести все досье.");
-                Console.WriteLine($"{CommandExite} - Выход.");
+                Console.WriteLine($"{CommandAddDossier} - Add dossier.");
+                Console.WriteLine($"{CommandDeleteDossier} - Delete dossier");
+                Console.WriteLine($"{CommandOutputDossier} - Display all dossier.");
+                Console.WriteLine($"{CommandExit} - Exit.");
 
-                Console.WriteLine("Выберете пункт: \n");
+                Console.WriteLine("Select an item: \n");
                 string choice = Console.ReadLine();
 
                 switch (choice)
@@ -48,7 +50,7 @@ namespace _0038_HA_Advanced_personnel_accounting
                     case CommandOutputDossier:
                         OutputDossier(positionStaff);
                         break;
-                    case CommandExite:
+                    case CommandExit:
                         Console.WriteLine(finalExitMessage);
                         Console.ReadKey();
                         isWork = false;
@@ -59,67 +61,96 @@ namespace _0038_HA_Advanced_personnel_accounting
 
         private static void AddDossier(Dictionary<string, List<string>> dictionary)
         {
-            Console.WriteLine("Введите полное имя сотрудника: \n");
+            Console.WriteLine("Enter the employee's full name: \n");
             string nameStaff = Console.ReadLine();
 
-            Console.WriteLine("Введите должность: ");
-            string position = Console.ReadLine();
-
-            if (dictionary.ContainsKey(position))
-            {
-                dictionary[position].Add(nameStaff);
-                Console.WriteLine($"\nСотрудник - {nameStaff} добавлен на должность - {position}");
-                Console.WriteLine("\nДля продолжения нажмите любую клавишу");
-            }
-            else
-            {
-                dictionary.Add(position, new List<string>());
-                dictionary[position].Add(nameStaff);
-                Console.WriteLine($"Должность - {position} добавлена, сотрудник - {nameStaff} добавлен.");
-            }
-        }
-
-        private static void DeleteDossier(Dictionary<string, List<string>> dictionary)
-        {
-            Console.WriteLine("Введите имя для удаления; \n");
-            string nameStaff = Console.ReadLine();
-
-            Console.WriteLine("Введите должность: ");
+            Console.WriteLine("Enter your position: ");
             string position = Console.ReadLine();
 
             if (!dictionary.ContainsKey(position))
             {
-                Console.WriteLine("Такой должности не существует.");
-                Console.WriteLine($"Нажмите любую клавишу для продолжения.");
-                Console.ReadKey();
+                dictionary.Add(position, new List<string>());
+                Console.WriteLine($"Position - {position} add.");
+            }
+
+            dictionary[position].Add(nameStaff);
+            Console.WriteLine($"\nEmployee - {nameStaff} added to position - {position}");
+            Pause();
+        }
+
+        private static void DeleteDossier(Dictionary<string, List<string>> dictionary)
+        {
+            Console.WriteLine("Enter your position: ");
+            OutputCollection(dictionary.Keys);
+            Console.WriteLine();
+            string userInput = Console.ReadLine();
+
+            if(TryReadInt(userInput, out int userNumber) == false)
+            {
+                Console.WriteLine($"Invalid input.");
+                Pause();
                 return;
             }
 
-            if (dictionary[position].Remove(nameStaff))
+            if(TryValidateNumberInRange(userNumber, dictionary.Count) == false)
             {
-                Console.WriteLine($"Сотрудник {nameStaff} удалён из списка и с должности {position}.");
-            }
-            else
-            {
-                Console.WriteLine($"Сотрудник {nameStaff} не найден.");
-                Console.ReadKey();
+                Console.WriteLine("There is no such position.");
+                Pause();
                 return;
             }
 
-            if (dictionary[position].Count == 0)
+
+            List<string> staffList = new List<string>();
+
+            foreach (var staff in dictionary.Keys)
             {
-                Console.WriteLine($"На должности {position} больше нет сотрудников, эта должность удаляется.");
-                Console.WriteLine($"Нажмите любую клавишу для продолжения.");
-                dictionary.Remove(position);
+                staffList.Add(staff);
             }
 
-            Console.WriteLine($"Нажмите любую клавишу для продолжения.");
-            Console.ReadKey();
+            string staffKey = staffList[userNumber - 1];
+
+            List<string> fullNames = dictionary[staffKey];
+
+            OutputCollection(fullNames);
+
+            Console.WriteLine();
+            Console.WriteLine("Enter the employee number to delete; \n");
+            userInput = Console.ReadLine();
+
+            if (TryReadInt(userInput, out int fullNamesNumber) == false)
+            {
+                Console.WriteLine($"Invalid input.");
+                Pause();
+                return;
+            }
+
+            if (TryValidateNumberInRange(fullNamesNumber, fullNames.Count) == false)
+            {
+                Console.WriteLine("There is no employee with this number");
+                Pause();
+                return;
+            }
+
+            int index = fullNamesNumber - 1;
+
+            string deleteName = fullNames[index];
+            fullNames.RemoveAt(index);
+            Console.WriteLine($"Employee {fullNamesNumber} - {deleteName} removed from the list and from position {staffKey}.");
+
+
+            if (dictionary[staffKey].Count == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"In position {staffKey} -  there are no more employees, this position is being deleted.");
+                dictionary.Remove(staffKey);
+            }
+
+            Pause();
         }
 
         private static void OutputDossier(Dictionary<string, List<string>> dictionary)
         {
-            Console.WriteLine("Список должностей и сотрудников: \n");
+            Console.WriteLine("List of positions and employees: \n");
 
             foreach (var item in dictionary)
             {
@@ -128,8 +159,43 @@ namespace _0038_HA_Advanced_personnel_accounting
             }
 
             Console.WriteLine();
-            Console.WriteLine($"Нажмите любую клавишу для продолжения.");
+            Pause();
+        }
+
+        static void Pause()
+        {
+            Console.WriteLine($"Press any key to continue.");
             Console.ReadKey();
+        }
+
+        static void OutputCollection(IEnumerable collection)
+        {
+            int i = 1;
+
+            foreach (var item in collection)
+            {
+                Console.WriteLine($"{i++}. {item}");
+            }
+        }
+
+        static bool TryReadInt(string input, out int number)
+        {
+            if (int.TryParse(input, out number) == false)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        static bool TryValidateNumberInRange(int number, int maxCount )
+        {
+            if (number < 1 || number > maxCount)
+            {               
+                return false ;
+            }
+
+            return  true; 
         }
     }
 }
