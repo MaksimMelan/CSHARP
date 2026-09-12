@@ -66,7 +66,7 @@ namespace _0038_HA_Advanced_personnel_accounting
             Console.WriteLine("Enter your position: ");
             string position = Console.ReadLine();
 
-            if (!dictionary.ContainsKey(position))
+            if (dictionary.ContainsKey(position) == false)
             {
                 dictionary.Add(position, new List<string>());
                 Console.WriteLine($"Position - {position} add.");

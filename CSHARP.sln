@@ -177,6 +177,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0037_HA_Dynamic array advan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0038_HA_Advanced personnel accounting", "0038_HA_Advanced personnel accounting\0038_HA_Advanced personnel accounting.csproj", "{050FB1E5-65C0-4A2D-8961-2CD4FDB9FBBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "039_HA_Unification into a single collection", "039_HA_Unification into a single collection\039_HA_Unification into a single collection.csproj", "{CA2EC33D-60FC-4A76-B3F9-4A7B0B170EB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "039_02_HA_HashSet_Unification_into_a_single_collection", "039_02_HA_HashSet_Unification_into_a_single_collection\039_02_HA_HashSet_Unification_into_a_single_collection.csproj", "{6542A6FE-D4CA-440E-AB80-C111A3B8CC04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -515,6 +519,14 @@ Global
 		{050FB1E5-65C0-4A2D-8961-2CD4FDB9FBBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{050FB1E5-65C0-4A2D-8961-2CD4FDB9FBBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{050FB1E5-65C0-4A2D-8961-2CD4FDB9FBBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA2EC33D-60FC-4A76-B3F9-4A7B0B170EB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA2EC33D-60FC-4A76-B3F9-4A7B0B170EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA2EC33D-60FC-4A76-B3F9-4A7B0B170EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA2EC33D-60FC-4A76-B3F9-4A7B0B170EB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6542A6FE-D4CA-440E-AB80-C111A3B8CC04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6542A6FE-D4CA-440E-AB80-C111A3B8CC04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6542A6FE-D4CA-440E-AB80-C111A3B8CC04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6542A6FE-D4CA-440E-AB80-C111A3B8CC04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -603,6 +615,8 @@ Global
 		{3BEA398A-6B0F-466C-B3E3-3B57B53E885E} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 		{5432C367-8FFB-45E1-9ABE-E2537519D723} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 		{050FB1E5-65C0-4A2D-8961-2CD4FDB9FBBC} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
+		{CA2EC33D-60FC-4A76-B3F9-4A7B0B170EB3} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
+		{6542A6FE-D4CA-440E-AB80-C111A3B8CC04} = {C6F8611E-7E16-4681-9CCB-14BE989FA848}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B098DCA-6170-4FC3-9DC2-5D85A6973C0C}
