@@ -5,19 +5,34 @@ namespace _039_02_HA_HashSet_Unification_into_a_single_collection
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
-            HashSet<string> symbolsMerge = new HashSet<string>();
             string[] symbols1 = new string[] { "1", "2", "1" };
             string[] symbols2 = new string[] { "2", "3" };
 
-            if (!CheckNullArray(symbols1)) return;
-            if (!CheckNullArray(symbols2)) return;
+            if (IsNullOrEmptyArray(symbols1))
+            {
+                MessageIsNullOrEmptyArray();
+                return;
+            } 
 
-            symbolsMerge = Merge(symbols1, symbols2);
+            if (IsNullOrEmptyArray(symbols2))
+            {
+                MessageIsNullOrEmptyArray();
+                return;
+            }
+
+
+            HashSet<string>  symbolsMerge = Merge(symbols1, symbols2);
 
             PrintList(symbolsMerge);
             Console.ReadKey();
+        }
+
+        private static void MessageIsNullOrEmptyArray()
+        {
+            Console.WriteLine("Массив пуст, программа закрывается.");
         }
 
         private static void PrintList(HashSet<string> list)
@@ -40,14 +55,9 @@ namespace _039_02_HA_HashSet_Unification_into_a_single_collection
             return result;
         }
 
-        static bool CheckNullArray(string[] arr)
+        static bool IsNullOrEmptyArray(string[] arr)
         {
-            if (arr == null || arr.Length == 0)
-            {
-                Console.WriteLine("Массив пуст, программа закрывается.");
-                return false;
-            }
-            return true;
+            return arr == null || arr.Length == 0;
         }
     }
 }

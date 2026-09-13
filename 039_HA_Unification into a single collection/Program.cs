@@ -7,17 +7,29 @@ namespace _039_HA_Unification_into_a_single_collection
     {
         static void Main(string[] args)
         {
-            List<string> symbolsMerge = new List<string>();
             string[] symbols1 = new string[] { "1", "2", "1" };
             string[] symbols2 = new string[] { "2", "3" };
 
-            if (!CheckNullArray(symbols1)) return;
-            if (!CheckNullArray(symbols2)) return;
+            if (IsNullOrEmptyArray(symbols1))
+            {
+                MessageIsNullOrEmptyArray();
+                return;
+            }
+            if (IsNullOrEmptyArray(symbols2))
+            {
+                MessageIsNullOrEmptyArray();
+                return;
+            }
 
-            symbolsMerge = Merge(symbols1, symbols2);
+            List<string> symbolsMerge = Merge(symbols1, symbols2);
 
             PrintList(symbolsMerge);
             Console.ReadKey();
+        }
+
+        private static void MessageIsNullOrEmptyArray()
+        {
+            Console.WriteLine("Массив пуст, программа закрывается.");
         }
 
         private static void PrintList(List<string> list)
@@ -43,14 +55,9 @@ namespace _039_HA_Unification_into_a_single_collection
             return result;
         }
 
-        static bool CheckNullArray(string[] arr)
+        static bool IsNullOrEmptyArray(string[] arr)
         {
-            if (arr == null || arr.Length == 0)
-            {
-                Console.WriteLine("Массив пуст, программа закрывается.");
-                return false;
-            }
-            return true;
+            return arr == null || arr.Length == 0;
         }
     }
 }
