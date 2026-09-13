@@ -23,7 +23,6 @@ namespace _039_02_HA_HashSet_Unification_into_a_single_collection
                 return;
             }
 
-
             HashSet<string>  symbolsMerge = Merge(symbols1, symbols2);
 
             PrintList(symbolsMerge);
